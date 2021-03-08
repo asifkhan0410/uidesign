@@ -9,12 +9,10 @@ body{
 }
 .navigation{
     display: flex;
-    top: 41px;
-    left: 139px;
-    margin: 41px 139px 0px;
+    margin: 20px 70px 0px;
     justify-content: space-between;
     /* width: 3560px; */
-    height: 124px;
+    height: 62px;
     background: #F9F5F5 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     border-radius: 4px;
@@ -29,24 +27,24 @@ body{
     display: flex;
     flex-direction: column;
     width:-webkit-fill-available;
-    border-bottom: 7px solid #F9F5F5 ;
-    justify-content: center;
+    border-bottom: 3px solid #F9F5F5 ;
+    justify-content: space-evenly;
     align-items: center;
 }
 .active{
-    border-bottom: 7px solid #64B3E8;
+    border-bottom: 3px solid #64B3E8;
 }
 .iconify{
     width: 46px;
-    height: 37px;
+    height: 22px;
     color: #64B3E8;
 }
 .navigation__listitem>h3{
     width: auto;
-    height: 43px;
+    height: 20px;
     margin: 0px;
     text-align: left;
-    font: normal normal bold 32px/43px Segoe UI;
+    font: normal normal bold 14px/22px Segoe UI;
     letter-spacing: 0px;
     color: #707070;
     opacity: 1;
