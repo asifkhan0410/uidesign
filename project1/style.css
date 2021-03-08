@@ -25,6 +25,7 @@ body{
 }
 .navigation__listitem{
     display: flex;
+    cursor: pointer;
     flex-direction: column;
     width:-webkit-fill-available;
     border-bottom: 3px solid #F9F5F5 ;
