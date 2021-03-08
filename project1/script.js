@@ -35,13 +35,13 @@ let activepanel,activebody,currentactivebody,filteractive;
       function toggleClick(){
           filteractive = document.querySelector('.filteractive.clicked');
           if(!filteractive){
-              this.style.backgroundColor='blue';
+              this.style.backgroundColor='#85BEE4';
               this.classList.add('clicked');
           }else if(filteractive===this){
-            this.style.backgroundColor='blue';
+            this.style.backgroundColor='#85BEE4';
             this.classList.add('clicked');
           }else{
-            this.style.backgroundColor='blue';
+            this.style.backgroundColor='#85BEE4';
             this.classList.add('clicked');
             filteractive.style.backgroundColor='#F9F5F5';
             filteractive.classList.remove('clicked');
