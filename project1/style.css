@@ -60,7 +60,7 @@ body{
 }
 .navigation__body{
     margin: 37px 70px 0px;
-    height: 350px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,6 +109,46 @@ body{
     padding: 6px;
     font-size: 20px;
     border-bottom: 1px solid;
+}
+.popularlistings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.popularlistings>img{
+    width: 16%;
+    margin: 4px 0px;
+}
+.imageactive{
+    border:2px solid #FC6703;
+}
+.filters{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 20px;
+}
+.filter{
+    display: flex;
+    height: 24px;
+    align-items: center;
+    background-color: #F9F5F5;
+    border-radius: 15px 5px 5px 15px;
+}
+.filter>h3{
+    margin: 0px;
+    padding: 0px 10px 0px 24px;
+    color: #807F7B;
+    font-size: 12px;
+}
+.filter>h3>span{
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #F9F5F5;
+    border: 1px solid #707070;
+    margin: -4px -27px;
+    position: absolute;
 }
 .trademark{
     display: flex;
