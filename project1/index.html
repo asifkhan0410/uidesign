@@ -27,12 +27,12 @@
                 <h3>Popular Listing</h3>
             </div>
             <div class="navigation__listitem item5">
-                <span class="iconify" data-icon="bx:bx-image" data-inline="false" style="height: 28px;"></span>
+                <span class="iconify"><img src="./images/image-light.svg"/></span>
                 <h3 style="height: 26px;">Architectural Style</h3>
             </div>
             </div>
             <div class="loginsignup">
-                <span class="iconify" data-icon="fa-solid:user-cog" data-inline="false" ></span>
+                <span class="iconify"><img src="./images/user-cog-regular.svg"/></span>
             </div>
         </div>
         <div class="navigation__body">
@@ -132,10 +132,10 @@
                     <div class="filter"><h3><span class="filteractive"> </span>Contemporary</h3></div>
                     <div class="filter"><h3><span class="filteractive"> </span>West Indies</h3></div>
                 </div>
-                <div class="popularlistings">
+                <div class="popularlistings filtered">
                     <img src="./images/french.jpg" alt="listing"/>
                     <img src="./images/french.jpg" alt="listing"/>
-                    <img class="imageactive" src="./images/french.jpg" alt="listing"/>
+                    <img class="filterimageactive" src="./images/french.jpg" alt="listing"/>
                     <img src="./images/french.jpg" alt="listing"/>
                     <img src="./images/french.jpg" alt="listing"/>
                     <img src="./images/french.jpg" alt="listing"/>
@@ -196,9 +196,85 @@
                 </div>
             </div>
         </div>
+        <div class="search">
+            <h2>Similar Images Found - 230</h2>
+            <div class="searchlistings">
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img class="expand" src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <img src="./images/french.jpg" alt="listing"/>
+                <div class="expansion">
+                    <div class="imagesection"></div>
+                    <div class="estatedetails">
+                        <div class="estatedetail"><img src="./images/bed-regular.svg" alt="Bedroom"/><h3>3 Bed</h3></div>
+                        <div class="estatedetail"><img src="./images/bath-regular.svg" alt="Bathroom"/><h3>2 Bath</h3></div>
+                        <div class="estatedetail"><img src="./images/house-regular.svg" alt="Home Area"/><h3>2,240 sqft</h3></div>
+                    </div>
+                    <div class="estatelocation">
+                        <h1>12345 American Way, Unit 216</h1>
+                        <p>Omaha, Nebraska</p>
+                    </div>
+                    <div class="estatetags">
+                        <h2>Tags found</h2>
+                        <p>Contemporary, Entry Door, Shutters, Columns, wrap around porch, pergola, Exterior, Front, etc.</p>
+                    </div>
+                    <div class="estateoptions">
+                        <h1>234000</h1>
+                        <h1>2.34%</h1>
+                        <img src='#' alt="kkd"/>
+                    </div>
+                    <h1>See listing details</h1>
+                </div>
+            </div>
+        </div>
         <div class="trademark">
             <h2>Powered by</h2>
             <img src="./images/ShowoffLogo.png" alt="showoff logo"/>
+        </div>
+        <div class="signupdialogbox">
+            <h2>Signup</h2>
+            <form>
+                <div class="formline">
+                    <div class="inputfield leftinputfield"><img src="./images/user-alt-regular.svg" alt="user name"/><input type="text"/></div>
+                    <div class="inputfield"><img src="./images/user-alt-regular.svg" alt="username"/><input type="text"/></div>
+                </div>
+                <div class="formline inputfield"><img src="./images/envelope-open-text-regular.svg" alt="email"/><input type="email" class="formbetween"/></div>
+                <div class="formline">
+                    <div class="inputfield leftinputfield"><img src="./images/envelope-open-text-regular.svg" alt="email"/><input/></div>
+                    <div class="inputfield"><img src="./images/lock-alt-regular.svg" alt="password"/><input type="password"/></div>
+                </div>
+                <div class="formline"><input type="checkbox"/><p>I accept the <a href="#">Terms</a> and <a href="#">Conditions</a></p></div>
+                <button>Signup</button>
+            </form>
+            <div class="social"><img src="./images/facebook-square-brands.svg" alt="facebook"/><img src="./images/google-plus-square-brands.svg" alt="google plus"/></div>
+            <p>Already have an account? <a class="signinbutton" href="#">signin</a></p>
+        </div>
+        <div class="signindialogbox">
+            <h2>Login</h2>
+            <form>
+                <div class="formline inputfield"><img src="./images/envelope-open-text-regular.svg" alt="email"/><input type="email" class="formbetween"/></div>
+                <div class="formline inputfield"><img src="./images/lock-alt-regular.svg" alt="password"/><input type="password" class="formbetween"/></div>
+                <div class="formline loginbetween"><p><input type="checkbox"/>Keep signed in</p><a class="forgetpasswordlink" href="#">Forget password?</a></div>
+                <button>Login</button>
+            </form>
+            <div class="social"><img src="./images/facebook-square-brands.svg" alt="facebook"/><img src="./images/google-plus-square-brands.svg" alt="google plus"/></div>
+            <p>Don't have an account? <a  class="signupbutton" href="#">signup</a></p>
+        </div>
+        <div class="forgetpassword">
+            <h2>Password</h2>
+            <form>
+                <div class="formline inputfield"><img src="./images/envelope-open-text-regular.svg" alt="email"/><input type="email" class="formbetween"/></div>                
+                <button>Get Password</button>
+            </form>
+            <p>Don't have an account? <a  class="signupbutton" href="#">signup</a></p>
         </div>
     </div>
   

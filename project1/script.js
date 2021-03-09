@@ -2,7 +2,19 @@ const navbarList = document.querySelectorAll('.navigation__listitem');
 const navbarListBody = document.querySelectorAll('.body');
 const Body = document.querySelector('.navigation__body');
 const fitlerActive = document.querySelectorAll('.filteractive');
-let activepanel,activebody,currentactivebody,filteractive;
+const popularListings = document.querySelector('.popularlistings');
+const filteredListings = document.querySelector('.filtered');
+const imagesListing1 = popularListings.querySelectorAll('img');
+const imagesListing2 = filteredListings.querySelectorAll('img');
+const signInButton = document.querySelector('.loginsignup');
+const signUpBox = document.querySelector('.signupdialogbox');
+const passwordBox = document.querySelector('.forgetpassword');
+const signInLink = document.querySelector('.signinbutton');
+const signUpLink = document.querySelectorAll('.signupbutton');
+const forgetpasswordLink = document.querySelector('.forgetpasswordlink');
+const signInBox = document.querySelector('.signindialogbox');
+
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false;
       
     function toggleTab(){
         activepanel= document.querySelector('.navigation__listitem.active');
@@ -47,6 +59,56 @@ let activepanel,activebody,currentactivebody,filteractive;
             filteractive.classList.remove('clicked');
           }
       }
+      function toggleBorder(){
+          imageactive = document.querySelector('.imageactive');
+          if(!imageactive){
+              this.classList.add('imageactive');
+          }else if(imageactive===this){
+              this.classList.add('imageactive');
+          }else{
+              this.classList.add('imageactive');
+              imageactive.classList.remove('imageactive')
+          }
+      }
+
+      function toggleBorderFilter(){
+        filteredimageactive = document.querySelector('.filterimageactive');
+        if(!filteredimageactive){
+            this.classList.add('filterimageactive');
+        }else if(filteredimageactive===this){
+            this.classList.add('filterimageactive');
+        }else{
+            this.classList.add('filterimageactive');
+            filteredimageactive.classList.remove('filterimageactive')
+        }
+    }
+
 
 navbarList.forEach(nl => nl.addEventListener('click', toggleTab));
 fitlerActive.forEach(fa => fa.addEventListener('click', toggleClick));
+imagesListing1.forEach(iml => iml.addEventListener('click', toggleBorder));
+imagesListing2.forEach(iml => iml.addEventListener('click', toggleBorderFilter));
+signInButton.addEventListener('click', ()=>{
+    if(!togglesignin) signUpBox.style.display = 'flex';
+    else{
+        signUpBox.style.display = 'none';
+        signInBox.style.display='none';
+        passwordBox.style.display= 'none'
+    }
+    togglesignin=!togglesignin;    
+});
+
+forgetpasswordLink.addEventListener('click', ()=>{
+    signInBox.style.display='none';
+    passwordBox.style.display='flex'
+})
+
+signInLink.addEventListener('click', ()=>{
+    signInBox.style.display='flex';
+    signUpBox.style.display='none'
+});
+signUpLink.forEach(sign => sign.addEventListener('click', ()=>{
+    signInBox.style.display='none';
+    passwordBox.style.display= 'none'
+    signUpBox.style.display='flex';
+}));
