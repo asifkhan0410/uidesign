@@ -497,13 +497,20 @@ span.iconify{
 }
 .searchresultsoptions__leftfiltersoptions>button,.sro_lfoleft>button,.sro_lforight>button, .searchresultsoptions__leftbuttons>button{
     flex: 1;
-    border: 1px solid #807F7B;
+    border: 2px solid #807F7B;
     padding: 10px;
     margin: 3px;
     color: #807F7B;
+    font-size: 11px;
     outline: none;
     font-weight: 600;
     background-color: #F9F5F5;
+}
+.sro_lforight{
+    flex:0.74;
+}
+.sro_lforight>button{
+    padding: 10px 30px;
 }
 .searchresultsoptions__leftbuttons{
     margin-top: 25px;
@@ -526,6 +533,17 @@ span.iconify{
     display: flex;
     flex: 0.55;
     flex-wrap: wrap;
+}
+.searchresultsoptions__left::before{
+    
+}
+.searchresultsoptions__right::after{
+    content: '';
+    height: 1px;
+    margin-left: 2px;
+    margin-top: 3px;
+    width: 311px;
+    background-color: #85BEE4;
 }
 .searchresultsoptions__rightcard{
     display: flex;
@@ -554,8 +572,66 @@ span.iconify{
     align-items: center;
     background-image: none;
 }
+.searchresultsoptions__rightcardfullsearch{
+    height: fit-content;
+    width:333px;
+}
+.fullsearchtop{
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+}
+.fullsearchtop>img{
+    border-radius: 50%;
+    border: 1px solid #C5C3BC;
+    height: 74px;
+    margin: 10px;
+}
+.fullsearchtopinfo{
+    display: flex;
+    flex-direction: column;
+}
+.fullsearchtopinfoheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fullsearchtopinfoheader>h1{
+    margin: 0px;
+    font-size: 14px;
+    color: #012D5A;
+    border-bottom: 1px solid #C5C3BC;
+}
+.fullsearchtopinfoheader>p{
+    margin: 0px;
+    font-size: 10px;
+}
+.fullsearchtopinfo>h3,.fullsearchtopinfo>p{
+    margin: 5px 0px;
+    font-size: 12px;
+}
+.fullsearchtopinfo>p{
+    font-size: 10px;
+    color: #707070;
+}
+.fullsearchbottom{
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #C5C3BC;
+}
+.fullsearchbottom>input{
+    flex: 0.9;
+    margin: 4px 8px;
+    font-size: 10px;
+    border: none;
+    border-bottom: 1px solid #C5C3BC;
+}
+.fullsearchbottom>img{
+    padding: 0px 6px;
+}
+
 .searchresultsoptions__rightcard>h4{
-    border-top: 1px solid;
+    border-top: 1px solid #C5C3BC;
     background-color: #F9F5F578;
     font-size: 11px;
     padding: 4px 0px;
