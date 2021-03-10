@@ -15,6 +15,9 @@ const forgetpasswordLink = document.querySelector('.forgetpasswordlink');
 const signInBox = document.querySelector('.signindialogbox');
 const ExpandBox = document.querySelector('.expansion');
 const ExpandBoxCloseButton = document.querySelector('.imagesectiontop');
+const ExpandBoxExpandButton = document.querySelector('.imagesectionbottom2');
+const ImageExpand =document.querySelector('.imagexpand');
+const ImageExpandClose = document.querySelector('.imagexpandtop');
 
 const searchListingImages = document.querySelectorAll('img');
 
@@ -123,3 +126,10 @@ ExpandBoxCloseButton.addEventListener('click', ()=>{
     ExpandBox.style.display="none";
     searchimageactive.classList.remove('searchimageactive')
 });
+
+ExpandBoxExpandButton.addEventListener('click',()=>{
+    ImageExpand.style.display='flex';
+});
+ImageExpandClose.addEventListener('click', ()=>{
+    ImageExpand.style.display='none'
+})
