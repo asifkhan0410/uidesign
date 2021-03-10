@@ -21,7 +21,12 @@ const ImageExpandClose = document.querySelector('.imagexpandtop');
 
 const searchListingImages = document.querySelectorAll('img');
 
-let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive;
+const SearchResultsOptionRight = document.querySelector('.searchresultsoptions__right');
+
+const SearchResultsOptionRightCard = document.querySelectorAll('.searchresultsoptions__rightcard');
+const SearchResultsOptionRightToggle = document.querySelector('.togglesearchbefore');
+
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false;;
       
     function toggleTab(){
         activepanel= document.querySelector('.navigation__listitem.active');
@@ -90,6 +95,17 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
             searchimageactive.classList.remove('searchimageactive');
         }
     }
+    function toggleSearchRight(){
+        if(!togglesearchright){
+            SearchResultsOptionRightCard.forEach(sror => sror.style.display='none');SearchResultsOptionRightToggle.style.right='80px';
+            SearchResultsOptionRight.style.backgroundColor='#F9F5F5';
+         }else{
+             SearchResultsOptionRightCard.forEach(sror => sror.style.display='flex'); SearchResultsOptionRightToggle.style.right='auto' ;
+            SearchResultsOptionRight.style.backgroundColor='white';
+
+         }
+        togglesearchright=!togglesearchright;
+    }
 
 
 navbarList.forEach(nl => nl.addEventListener('click', toggleTab));
@@ -132,4 +148,6 @@ ExpandBoxExpandButton.addEventListener('click',()=>{
 });
 ImageExpandClose.addEventListener('click', ()=>{
     ImageExpand.style.display='none'
-})
+});
+
+SearchResultsOptionRightToggle.addEventListener('click', toggleSearchRight);

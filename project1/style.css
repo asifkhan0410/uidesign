@@ -470,6 +470,7 @@ span.iconify{
 .searchresults, .savedresults{
     border: none;
     padding: 11px;
+    width:120px;
     margin: 5px;
     outline: none;
     font-weight: 600;
@@ -480,13 +481,16 @@ span.iconify{
     color: #807F7B;
     background-color: #F9F5F5;
 }
-.search-active::after{
+.searchresults.search-active::after,.savedresults.search-active::after{
     content: '';
     position: absolute;
     height: 19px;
-    width: 119px;
-    margin: 27px -107.3px;
+    width: 120px;
+    margin: 27px -108px;
     background-color: inherit;
+}
+.savedresults.search-active::after{
+    margin:27px -106px;
 }
 .searchresultsoptions__leftfilters{
     display: flex;
@@ -506,9 +510,7 @@ span.iconify{
     font-weight: 600;
     background-color: #F9F5F5;
 }
-.sro_lforight{
-    flex:0.74;
-}
+
 .sro_lforight>button{
     padding: 10px 30px;
 }
@@ -531,11 +533,14 @@ span.iconify{
 }
 .searchresultsoptions__right{
     display: flex;
-    flex: 0.55;
+    flex: 0.54;
     flex-wrap: wrap;
 }
-.searchresultsoptions__left::before{
-    
+.togglesearchbefore{
+    content: url(./images/triangle-solid.svg);
+    position: absolute;
+    margin-left: -18px;
+    margin-top: 120px;
 }
 .searchresultsoptions__right::after{
     content: '';
@@ -549,12 +554,12 @@ span.iconify{
     display: flex;
     height: fit-content;
     flex-direction: column;
-    margin: 2px;
+    margin: 2.7px;
     align-items: center;
     border: 2px solid #C5C3BC;
 }
 .searchresultsoptions__rightcardimg,.searchresultsoptions__rightcardsearch{
-    margin: 20px 15px;
+    margin: 14px;
     height: 74px;
     width: 74px;
     border-radius: 50%;
@@ -574,12 +579,12 @@ span.iconify{
 }
 .searchresultsoptions__rightcardfullsearch{
     height: fit-content;
-    width:333px;
+    width:331px;
 }
 .fullsearchtop{
     display: flex;
     align-items: center;
-    padding: 10px 5px;
+    padding: 5px;
 }
 .fullsearchtop>img{
     border-radius: 50%;
@@ -622,6 +627,7 @@ span.iconify{
 .fullsearchbottom>input{
     flex: 0.9;
     margin: 4px 8px;
+    outline: none;
     font-size: 10px;
     border: none;
     border-bottom: 1px solid #C5C3BC;
