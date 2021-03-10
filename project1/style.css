@@ -531,6 +531,20 @@ span.iconify{
     font-weight: 600;
     outline: none;
 }
+.opensearchresults{
+    width:100%;
+    display: none;
+}
+.opensearchresults>button{
+    border: none;
+    padding: 10px;
+    background-color: white;
+    color: #64b3e8;
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: 600;
+    outline: none;
+}
 .searchresultsoptions__right{
     display: flex;
     flex: 0.54;

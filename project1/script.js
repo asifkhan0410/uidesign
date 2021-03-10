@@ -27,9 +27,12 @@ const SearchResultsOption = document.querySelector('.searchresultoptions');
 const SearchResultsOptionRightCard = document.querySelectorAll('.searchresultsoptions__rightcard');
 const SearchResultsOptionRightToggle = document.querySelector('.togglesearchbefore');
 
+const toggleCloseSearch = document.querySelector('.closesearchresults');
+const toggleOpenSearch = document.querySelector('.opensearchresults');
+
 const SearchOptions = document.querySelectorAll('.searchoptions button');
 
-let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption;
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false;
       
     function toggleTab(){
         activepanel= document.querySelector('.navigation__listitem.active');
@@ -122,8 +125,13 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
             togglesearchoption.classList.remove('search-active');
         }
 
-        if(this.classList[0]==='searchresults') {SearchResultsOption.style.display='flex';}
-        else {SearchResultsOption.style.display='none';}
+        if(this.classList[0]==='searchresults') {
+            SearchResultsOption.style.display='flex';
+        }
+        else {SearchResultsOption.style.display='none';
+    toggleOpenSearch.style.display='none';
+        
+    }
     }
 
 
@@ -172,3 +180,12 @@ ImageExpandClose.addEventListener('click', ()=>{
 SearchResultsOptionRightToggle.addEventListener('click', toggleSearchRight);
 
 SearchOptions.forEach(so => so.addEventListener('click', toggleSearchOption));
+toggleCloseSearch.addEventListener('click',()=>{
+    SearchResultsOption.style.display='none';
+    toggleOpenSearch.style.display='flex';
+})
+
+toggleOpenSearch.addEventListener('click', ()=>{
+    SearchResultsOption.style.display='flex';
+    toggleOpenSearch.style.display='none';
+})
