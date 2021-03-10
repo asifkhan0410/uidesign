@@ -22,11 +22,14 @@ const ImageExpandClose = document.querySelector('.imagexpandtop');
 const searchListingImages = document.querySelectorAll('img');
 
 const SearchResultsOptionRight = document.querySelector('.searchresultsoptions__right');
+const SearchResultsOption = document.querySelector('.searchresultoptions');
 
 const SearchResultsOptionRightCard = document.querySelectorAll('.searchresultsoptions__rightcard');
 const SearchResultsOptionRightToggle = document.querySelector('.togglesearchbefore');
 
-let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false;;
+const SearchOptions = document.querySelectorAll('.searchoptions button');
+
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption;
       
     function toggleTab(){
         activepanel= document.querySelector('.navigation__listitem.active');
@@ -97,7 +100,7 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
     }
     function toggleSearchRight(){
         if(!togglesearchright){
-            SearchResultsOptionRightCard.forEach(sror => sror.style.display='none');SearchResultsOptionRightToggle.style.right='80px';
+            SearchResultsOptionRightCard.forEach(sror => sror.style.display='none');SearchResultsOptionRightToggle.style.right='67px';
             SearchResultsOptionRight.style.backgroundColor='#F9F5F5';
          }else{
              SearchResultsOptionRightCard.forEach(sror => sror.style.display='flex'); SearchResultsOptionRightToggle.style.right='auto' ;
@@ -105,6 +108,22 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
 
          }
         togglesearchright=!togglesearchright;
+    }
+
+    function toggleSearchOption(){
+
+        togglesearchoption = document.querySelector('.search-active');
+
+        if(!togglesearchoption || togglesearchoption===this){
+            this.classList.add('search-active');
+            SearchResultsOption.style.display
+        }else{
+            this.classList.add('search-active');
+            togglesearchoption.classList.remove('search-active');
+        }
+
+        if(this.classList[0]==='searchresults') {SearchResultsOption.style.display='flex';}
+        else {SearchResultsOption.style.display='none';}
     }
 
 
@@ -151,3 +170,5 @@ ImageExpandClose.addEventListener('click', ()=>{
 });
 
 SearchResultsOptionRightToggle.addEventListener('click', toggleSearchRight);
+
+SearchOptions.forEach(so => so.addEventListener('click', toggleSearchOption));
