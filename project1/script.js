@@ -13,8 +13,12 @@ const signInLink = document.querySelector('.signinbutton');
 const signUpLink = document.querySelectorAll('.signupbutton');
 const forgetpasswordLink = document.querySelector('.forgetpasswordlink');
 const signInBox = document.querySelector('.signindialogbox');
+const ExpandBox = document.querySelector('.expansion');
+const ExpandBoxCloseButton = document.querySelector('.imagesectiontop');
 
-let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false;
+const searchListingImages = document.querySelectorAll('img');
+
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive;
       
     function toggleTab(){
         activepanel= document.querySelector('.navigation__listitem.active');
@@ -32,26 +36,19 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
         
           if(!activepanel && !activebody){
             this.classList.add('active');
-            //currentactivebody.classList.add('activebody');
           }else if(activepanel===this && activebody===currentactivebody){
             this.classList.add("active");
-            //currentactivebody.classList.add('activebody');
           }else{
             this.classList.add("active");
             activepanel.classList.remove('active') ;
-            //activepanel.classList.remove('activebody')
-            //currentactivebody.classList.remove('activebody');
           }
       }
 
       function toggleClick(){
           filteractive = document.querySelector('.filteractive.clicked');
-          if(!filteractive){
+          if(!filteractive || filteractive===this){
               this.style.backgroundColor='#85BEE4';
               this.classList.add('clicked');
-          }else if(filteractive===this){
-            this.style.backgroundColor='#85BEE4';
-            this.classList.add('clicked');
           }else{
             this.style.backgroundColor='#85BEE4';
             this.classList.add('clicked');
@@ -61,9 +58,7 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
       }
       function toggleBorder(){
           imageactive = document.querySelector('.imageactive');
-          if(!imageactive){
-              this.classList.add('imageactive');
-          }else if(imageactive===this){
+          if(!imageactive || imageactive===this){
               this.classList.add('imageactive');
           }else{
               this.classList.add('imageactive');
@@ -73,13 +68,23 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
 
       function toggleBorderFilter(){
         filteredimageactive = document.querySelector('.filterimageactive');
-        if(!filteredimageactive){
-            this.classList.add('filterimageactive');
-        }else if(filteredimageactive===this){
+        if(!filteredimageactive || filteredimageactive===this){
             this.classList.add('filterimageactive');
         }else{
             this.classList.add('filterimageactive');
             filteredimageactive.classList.remove('filterimageactive')
+        }
+    }
+
+    function toggleExpand(){
+        searchimageactive = document.querySelector('.searchimageactive');
+        if(!searchimageactive || searchimageactive===this){
+            this.classList.add('searchimageactive');
+            ExpandBox.style.display='flex';
+        }else{
+            ExpandBox.style.display='flex';
+            this.classList.add('searchimageactive');
+            searchimageactive.classList.remove('searchimageactive');
         }
     }
 
@@ -112,3 +117,9 @@ signUpLink.forEach(sign => sign.addEventListener('click', ()=>{
     passwordBox.style.display= 'none'
     signUpBox.style.display='flex';
 }));
+
+searchListingImages.forEach(sil => sil.addEventListener('click', toggleExpand));
+ExpandBoxCloseButton.addEventListener('click', ()=>{
+    ExpandBox.style.display="none";
+    searchimageactive.classList.remove('searchimageactive')
+});
