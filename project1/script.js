@@ -21,7 +21,7 @@ const ImageExpandClose = document.querySelector('.imagexpandtop');
 
 const searchListingImages = document.querySelectorAll('.searchlistings img');
 
-const SearchResultsOptionRight = document.querySelector('.searchresultsoptions__right');
+const SearchResultsOptionRight = document.querySelectorAll('.searchresultsoptions__right');
 const SearchResultsOption = document.querySelector('.searchresultoptions');
 const SavedResultsOption = document.querySelector('.savedresultoptions');
 
@@ -114,10 +114,10 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
     function toggleSearchRight(){
         if(!togglesearchright){
             SearchResultsOptionRightCard.forEach(sror => sror.style.display='none');SearchResultsOptionRightToggle.style.right='67px';
-            SearchResultsOptionRight.style.backgroundColor='#F9F5F5';
+            SearchResultsOptionRight.forEach(sror => sror.style.backgroundColor='#F9F5F5');
          }else{
              SearchResultsOptionRightCard.forEach(sror => sror.style.display='flex'); SearchResultsOptionRightToggle.style.right='auto' ;
-            SearchResultsOptionRight.style.backgroundColor='white';
+            SearchResultsOptionRight.forEach(sror => sror.style.backgroundColor='white');
 
          }
         togglesearchright=!togglesearchright;

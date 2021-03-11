@@ -527,7 +527,7 @@ span.iconify{
 }
 .searchresultsoptions__left{
     background-color: #F9F5F5;
-    flex: 0.5;
+    flex: 0.48;
     padding: 5px 25px 5px 5px;
 }
 .searchresultoptions{
@@ -626,9 +626,7 @@ span.iconify{
 }
 .searchresultsoptions__right{
     display: flex;
-    overflow-x: scroll;
     flex: 0.54;
-    flex-wrap: wrap;
 }
 .togglesearchbefore{
     content: url(./images/triangle-solid.svg);
@@ -636,14 +634,7 @@ span.iconify{
     margin-left: -18px;
     margin-top: 120px;
 }
-.searchresultsoptions__right::after{
-    content: '';
-    height: 1px;
-    margin-left: 2px;
-    margin-top: 3px;
-    width: 311px;
-    background-color: #85BEE4;
-}
+
 .searchresultsoptions__rightcard{
     display: flex;
     height: fit-content;
