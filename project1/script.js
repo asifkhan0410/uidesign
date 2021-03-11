@@ -19,10 +19,11 @@ const ExpandBoxExpandButton = document.querySelector('.imagesectionbottom2');
 const ImageExpand =document.querySelector('.imagexpand');
 const ImageExpandClose = document.querySelector('.imagexpandtop');
 
-const searchListingImages = document.querySelectorAll('img');
+const searchListingImages = document.querySelectorAll('.searchlistings img');
 
 const SearchResultsOptionRight = document.querySelector('.searchresultsoptions__right');
 const SearchResultsOption = document.querySelector('.searchresultoptions');
+const SavedResultsOption = document.querySelector('.savedresultoptions');
 
 const SearchResultsOptionRightCard = document.querySelectorAll('.searchresultsoptions__rightcard');
 const SearchResultsOptionRightToggle = document.querySelector('.togglesearchbefore');
@@ -31,13 +32,21 @@ const toggleCloseSearch = document.querySelector('.closesearchresults');
 const toggleOpenSearch = document.querySelector('.opensearchresults');
 
 const SearchOptions = document.querySelectorAll('.searchoptions button');
+const fullSearchBottom = document.querySelector('.fullsearchbottom');
+const Pencil= document.querySelector('.fullsearchbottom .pencil');
 
-let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false;
+const selectFiles= document.querySelectorAll('.body button');
+const selectFilesBody= document.querySelector('.select__files');
+const Search = document.querySelector('.search')
+
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=true;
       
     function toggleTab(){
         activepanel= document.querySelector('.navigation__listitem.active');
         activebody= document.querySelector('.body.activebody');
         currentactivebody = document.querySelector(`.body.${this.classList[1]}`);
+        Search.style.display='none';
+        Body.style.display='flex';
         currentactivebody.classList.add('activebody');
         activebody.classList.remove('activebody');
         if(this.classList[1]==='item4'||this.classList[1]==='item5'){
@@ -92,9 +101,10 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
 
     function toggleExpand(){
         searchimageactive = document.querySelector('.searchimageactive');
+        fullSearchBottom.innerHTML = '<img src="./images/stop-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
         if(!searchimageactive || searchimageactive===this){
             this.classList.add('searchimageactive');
-            ExpandBox.style.display='flex';
+            ExpandBox.style.display='flex';            
         }else{
             ExpandBox.style.display='flex';
             this.classList.add('searchimageactive');
@@ -127,11 +137,23 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
 
         if(this.classList[0]==='searchresults') {
             SearchResultsOption.style.display='flex';
+            SavedResultsOption.style.display='none';
         }
         else {SearchResultsOption.style.display='none';
-    toggleOpenSearch.style.display='none';
-        
+        toggleOpenSearch.style.display='none';
+        SavedResultsOption.style.display='flex';        
     }
+    }
+
+    function pencilToggle(){
+        console.log(Pencil)
+
+        if(!penciltoggle){
+            fullSearchBottom.innerHTML = '<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/save-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>';
+        }else {
+            fullSearchBottom.innerHTML='<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><h4>Marry Turner</h4><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
+        }    
+        penciltoggle=!penciltoggle;
     }
 
 
@@ -167,13 +189,14 @@ signUpLink.forEach(sign => sign.addEventListener('click', ()=>{
 searchListingImages.forEach(sil => sil.addEventListener('click', toggleExpand));
 ExpandBoxCloseButton.addEventListener('click', ()=>{
     ExpandBox.style.display="none";
-    searchimageactive.classList.remove('searchimageactive')
+    searchimageactive.classList.remove('searchimageactive');
+    fullSearchBottom.innerHTML = '<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/save-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>';
 });
 
 ExpandBoxExpandButton.addEventListener('click',()=>{
     ImageExpand.style.display='flex';
 });
-ImageExpandClose.addEventListener('click', ()=>{
+ImageExpandClose.addEventListener('click', ()=>{ 
     ImageExpand.style.display='none'
 });
 
@@ -188,4 +211,15 @@ toggleCloseSearch.addEventListener('click',()=>{
 toggleOpenSearch.addEventListener('click', ()=>{
     SearchResultsOption.style.display='flex';
     toggleOpenSearch.style.display='none';
+})
+
+Pencil.addEventListener('click', pencilToggle);
+
+selectFiles.forEach(sf => sf.addEventListener('click', ()=>{
+    Body.style.display ='none'
+    selectFilesBody.style.display='flex';
+}))
+selectFilesBody.addEventListener('click', ()=>{
+    Search.style.display="flex";
+    selectFilesBody.style.display = 'none'
 })
