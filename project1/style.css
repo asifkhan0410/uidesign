@@ -626,6 +626,7 @@ span.iconify{
 }
 .searchresultsoptions__right{
     display: flex;
+    overflow-x: scroll;
     flex: 0.54;
     flex-wrap: wrap;
 }
