@@ -520,6 +520,11 @@ span.iconify{
     font-size: 12px;
 }
 /* Search Filter */
+.search>h2{
+    margin: 0px 0px 10px;
+    font-size: 15px;
+    color: #7b7070;
+}
 .searchresultsoptions__left{
     background-color: #F9F5F5;
     flex: 0.5;
