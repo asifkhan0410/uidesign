@@ -892,5 +892,19 @@ span.iconify{
         width:75px;
         height:12px;
     }
-    
+    .select__files{
+        margin: 40px 4%;
+        padding: 58px 0px;
+    }
+    .box{
+        height: 50px;
+        width: 50px;
+    }
+    .box>img{
+        width:48px;
+    }
+    .select__filestoprighttopright {
+        flex: 0.3;
+    }
+
 }
