@@ -1,3 +1,5 @@
+
+
 body{
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
@@ -837,6 +839,18 @@ span.iconify{
 .tableitem15{width:41px}
 .tableitem16{width:63px}
 .tableitem17{width:90px}
+
+::-webkit-scrollbar {
+    height: 3px;
+    width:7px;
+}  
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #64B3E8; 
+    border-radius: 2px;
+  }
+  
 
 @media screen and (max-width:412px){
     .navigation{
