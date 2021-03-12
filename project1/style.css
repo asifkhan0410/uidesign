@@ -868,4 +868,29 @@ span.iconify{
         width: 225px;
         font-size: 7px;
     }
+    .body.item4>h2 {
+        margin: 0 0 10px;
+        font-size: 10px;
+    }
+    .popularlistings>img, .searchlistings>img {
+        width: 47%;
+    }
+    .filters{
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .filter{
+        margin: 5px;
+    }
+    .trademark{
+        margin: 15px 25px;
+    }
+    .trademark>h2{
+        font-size: 10px;
+    }
+    .trademark>img{
+        width:75px;
+        height:12px;
+    }
+    
 }
