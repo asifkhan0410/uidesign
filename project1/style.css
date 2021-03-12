@@ -922,6 +922,9 @@ span.iconify{
         width: 100px;
         margin: 20px -90px;
     }
+    .savedresults.search-active::after {
+        margin: 20px -88px;
+    }
     .searchresultoptions {
         flex-direction: column;
         margin-left: 3px;
@@ -1051,5 +1054,24 @@ span.iconify{
     .imagexpand>p{
         font-size: 8px;
     }
-
+    .savedresultoptions{
+        width:100%
+    }
+    .savedresultoptions__top{
+        width: 100%;
+        overflow-x: scroll;
+        align-items: unset;
+    }
+    .savedresultoptions__toptable{
+        width: fit-content;
+    }
+    .pagination{
+        width:90%;
+    }
+    .pagination>button{
+        padding: 5px;
+    }
+    .savedresultoptions__toptable>ul{
+        padding-left: 10px;
+    }
 }
