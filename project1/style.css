@@ -837,3 +837,35 @@ span.iconify{
 .tableitem15{width:41px}
 .tableitem16{width:63px}
 .tableitem17{width:90px}
+
+@media screen and (max-width:412px){
+    .navigation{
+        margin: 20px 15px 0px;
+    }
+    .navigation__list{
+        flex: 0.9;
+    }
+    .navigation__listitem>h3{
+        font-size: 9px;
+        margin: 0px;
+        text-align: center;
+        height: 25px;
+        line-height: 12px;
+    }
+    .navigation__body{
+        margin: 37px 15px 0px;
+    }
+    .body.item1>h2, .body.item2>h2{
+        font-size: 1rem;
+    }
+    .body.item1 >button, .body.item2 >button, .featuresearch>button {
+        font-size: 15px;
+    }
+    .body.item1>p, .body.item2>p, .body.item3>p{
+        font-size: 10px;
+    }
+    .featuresearch>input{
+        width: 225px;
+        font-size: 7px;
+    }
+}
