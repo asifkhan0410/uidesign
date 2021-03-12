@@ -114,7 +114,7 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
     }
     function toggleSearchRight(){
         if(!togglesearchright){
-            SearchResultsOptionRightCard.forEach(sror => sror.style.display='none');SearchResultsOptionRightToggle.style.right='67px';
+            SearchResultsOptionRightCard.forEach(sror => sror.style.display='none');SearchResultsOptionRightToggle.style.right=`${window.screen.width>415 ?'67px':'auto'}`;
             SearchResultsOptionRight.forEach(sror => sror.style.backgroundColor='#F9F5F5');
          }else{
              SearchResultsOptionRightCard.forEach(sror => sror.style.display='flex'); SearchResultsOptionRightToggle.style.right='auto' ;
