@@ -906,5 +906,63 @@ span.iconify{
     .select__filestoprighttopright {
         flex: 0.3;
     }
-
+    .search{
+        margin: 37px 20px 0px;
+    }
+    .search>h2{
+        font-size: 10px;
+    }
+    .searchresults, .savedresults {
+        width: 100px;
+        margin: 0px;
+        font-size: 11px;
+        padding: 9px;
+    }
+    .searchresults.search-active::after, .savedresults.search-active::after {
+        width: 100px;
+        margin: 20px -90px;
+    }
+    .searchresultoptions {
+        flex-direction: column;
+        margin-left: 3px;
+    }
+    .closesearchresults{
+        font-size: 10px;
+    }
+    .searchresultsoptions__leftfiltersoptions>button, .sro_lfoleft>button, .sro_lforight>button, .searchresultsoptions__leftbuttons>button {
+        font-size: 8px;
+        padding: 5px;
+        margin: 1px;
+    }
+    .sro_lfoleft>button{
+        font-size: 7px;
+    }
+    .searchresultsoptions__rightcardimg, .searchresultsoptions__rightcardsearch {
+        margin: 8px;
+        height: 50px;
+        width: 50px;
+    }
+    .searchresultsoptions__rightcard>h4 {
+        font-size: 7px;
+    }
+    .searchresultsoptions__rightcardfullsearch {
+        width: 223px;
+    }
+    .fullsearchtop>img{
+        height: 50px;
+    margin: 5px;
+    }
+    .fullsearchtopinfoheader>h1 {
+        font-size: 9px;
+    }
+    .fullsearchtopinfoheader>p {
+        font-size: 7px;
+    }
+    .fullsearchtopinfo>h3, .fullsearchtopinfo>p {
+        margin: 2px 0px;
+        font-size: 7px;
+    }
+    .fullsearchbottom>input {
+        margin: 2px 8px;
+    }
 }
