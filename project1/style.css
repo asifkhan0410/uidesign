@@ -934,10 +934,10 @@ span.iconify{
     }
     .searchresults.search-active::after, .savedresults.search-active::after {
         width: 100px;
-        margin: 20px -90px;
+        margin: 20px -88px;
     }
     .savedresults.search-active::after {
-        margin: 20px -88px;
+        margin: 20px -86px;
     }
     .searchresultoptions {
         flex-direction: column;
