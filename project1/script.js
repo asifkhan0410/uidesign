@@ -47,6 +47,7 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
         currentactivebody = document.querySelector(`.body.${this.classList[1]}`);
         Search.style.display='none';
         Body.style.display='flex';
+        selectFilesBody.style.display='none'
         currentactivebody.classList.add('activebody');
         activebody.classList.remove('activebody');
         if(this.classList[1]==='item4'||this.classList[1]==='item5'){
