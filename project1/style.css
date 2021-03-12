@@ -976,6 +976,12 @@ span.iconify{
     .fullsearchtop{
         padding: 5px 2px;
     }
+    .fullsearchtop::after{
+        height: 30px;
+    width: 4px;
+    margin-top: 8px;
+    margin-right: -3px;
+    }
     .fullsearchtop>img{
         height: 50px;
         margin: 5px;
