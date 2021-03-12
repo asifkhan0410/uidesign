@@ -964,5 +964,92 @@ span.iconify{
     }
     .fullsearchbottom>input {
         margin: 2px 8px;
+        font-size: 8px;
     }
+    .fullsearchbottom>h4 {
+        font-size: 7px;
+        padding: 4px 72px 4px 5px;
+    }
+    .fullsearchbottom>img{
+        width: 8px;
+    }
+    .expansion{
+        top: auto;
+        margin-top: 107px;
+        right: auto;
+        width: 85%;
+    }
+    .imagesection{
+        height: 205px;
+    }
+    .imagesectiontop > img {
+        width: 10px;
+    }
+    .imagesectionbottom{
+        justify-content: flex-end;
+        margin-bottom: 1px;
+    }
+    .imagesectionbottom>span{
+        padding: 4px;
+    }
+    .imagesectionbottom1{
+        margin: 0px 40px 0px 5px;
+    }
+    .estatedetails{
+        margin: 5px 0px;
+    padding-bottom: 4px;
+    }
+    .estatedetail{
+        flex: 0.3;
+    }
+    .estatedetail>h3{
+        margin: 0px;
+        font-size: 9px;
+    }
+    .estatelocation, .estatetags {
+        margin: 0px 15px;
+    padding-bottom: 10px;
+    }
+    .estatelocation>h1{
+        font-size: 15px;
+    }
+    .estatelocation>p{
+        font-size: 12px;
+    }
+    .estatetags>h2{
+        margin: 16px 0px 6px;
+    font-size: 13px;
+    }
+    .estatetags>p{
+        font-size: 10px;
+    }
+    .estateoptions>h1{
+        font-size: 15px;
+        padding: 8px 30px;
+    }
+    .estateoptions>h3{
+        font-size: 12px;
+        padding: 10px 30px;
+    }
+    .estateoptions>img {
+        padding: 2px 10px;
+        width: 13px;
+    }
+    .expansion>h1{
+        font-size: 12px;
+        padding: 10px 0px;
+    }
+    .imagexpand{
+        padding: 15px;
+    }
+    .imagexpandtop>img , .imagexpandbottom1>img, .imagexpandbottom3>img{
+        width: 20px;
+    }
+    .imagexpandbottom2>img{
+        width:100%;
+    }
+    .imagexpand>p{
+        font-size: 8px;
+    }
+
 }
