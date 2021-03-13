@@ -1101,6 +1101,8 @@ span.iconify{
         width: fit-content;
         padding-bottom: 5px;
     }
+
+    /* pAGINATION RESPONSIVE */
     .pagination{
         width:90%;
     }
