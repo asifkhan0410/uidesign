@@ -19,10 +19,15 @@ const ExpandBoxExpandButton = document.querySelector('.imagesectionbottom2');
 const ImageExpand =document.querySelector('.imagexpand');
 const ImageExpandClose = document.querySelector('.imagexpandtop');
 
+const searchListing = document.querySelector('.searchlistings');
+
+
 const searchListingImages = document.querySelectorAll('.searchlistings img');
 
 const SearchResultsOptionRight = document.querySelectorAll('.searchresultsoptions__right');
 const SearchResultsOption = document.querySelector('.searchresultoptions');
+const SearchOptionsContainer = document.querySelector('.searchoptionscontainer');
+let topofSearch = SearchOptionsContainer.offsetTop;
 const SavedResultsOption = document.querySelector('.savedresultoptions');
 
 const SearchResultsOptionRightCard = document.querySelectorAll('.searchresultsoptions__rightcard');
@@ -40,6 +45,18 @@ const selectFilesBody= document.querySelector('.select__files');
 const Search = document.querySelector('.search')
 
 let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=true;
+
+function fixNav() {
+    if (window.scrollY >= topofSearch) {
+      document.body.style.paddingTop = SearchOptionsContainer.offsetHeight + 'px'; //this adds a padding by calculating the height of the nav as when an element gets sticky the space it acquires gets vanished so the below elemts gets pushed up.
+      document.body.classList.add('fixed-nav'); //adding a class to body helps in using it throughout the body elemets
+    } else {
+      document.body.classList.remove('fixed-nav');
+      document.body.style.paddingTop = 0;
+    }
+  }
+
+  
       
     function toggleTab(){
         activepanel= document.querySelector('.navigation__listitem.active');
@@ -105,9 +122,15 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
         fullSearchBottom.innerHTML = '<img src="./images/stop-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
         if(!searchimageactive || searchimageactive===this){
             this.classList.add('searchimageactive');
+            searchListing.style.width="66.8%";
+            searchListing.style.marginRight='4px'
+            searchListingImages.forEach(sli => sli.style.width='24%');
             ExpandBox.style.display='flex';            
         }else{
             ExpandBox.style.display='flex';
+            searchListing.style.width="66.8%";
+            searchListing.style.marginRight='4px'
+            searchListingImages.forEach(sli => sli.style.width='24%');
             this.classList.add('searchimageactive');
             searchimageactive.classList.remove('searchimageactive');
         }
@@ -190,6 +213,9 @@ signUpLink.forEach(sign => sign.addEventListener('click', ()=>{
 searchListingImages.forEach(sil => sil.addEventListener('click', toggleExpand));
 ExpandBoxCloseButton.addEventListener('click', ()=>{
     ExpandBox.style.display="none";
+    searchListing.style.width="100%";
+    searchListing.style.marginRight='0px'
+    searchListingImages.forEach(sli => sli.style.width='16%');
     searchimageactive.classList.remove('searchimageactive');
     fullSearchBottom.innerHTML = '<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/save-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>';
 });
@@ -223,4 +249,6 @@ selectFiles.forEach(sf => sf.addEventListener('click', ()=>{
 selectFilesBody.addEventListener('click', ()=>{
     Search.style.display="flex";
     selectFilesBody.style.display = 'none'
-})
+});
+
+window.addEventListener('scroll', fixNav);
