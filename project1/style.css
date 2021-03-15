@@ -586,7 +586,7 @@ span.iconify{
     background-color: inherit;
 }
 .savedresults.search-active::after{
-    margin:27px -105px;
+    margin:25px -105px;
 }
 .searchresultsoptions__leftfilters{
     display: flex;
@@ -1183,5 +1183,19 @@ span.iconify{
     }
     .togglesearchbefore{
         margin-top: 162px;
+    }
+    .imagesection{
+        background-size: cover;
+    }
+    .imagesectionbottom{
+        justify-content: flex-end;
+    }
+    .estatedetail>h3{
+        width: 100%;
+    }
+    .savedresultoptions__toptable>ul {
+        width: 95%;
+        justify-content: space-evenly;
+        margin: 5px;
     }
 }
