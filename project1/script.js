@@ -26,7 +26,9 @@ const searchListingImages = document.querySelectorAll('.searchlistings img');
 const OpenSearch = document.querySelector('.searchresultsoptions__rightcardsearch');
 const OpenSearchBox = document.querySelector('.searchresultsoptions__rightcard.selectopensearch');
 const CloseOpenSearchBox = document.querySelector('.fullsearchtopafter');
-console.log(OpenSearch,OpenSearchBox,CloseOpenSearchBox);
+
+const a = document.querySelectorAll('.searchresultsoptions__rightcardimg');
+
 const SearchResultsOptionRight = document.querySelectorAll('.searchresultsoptions__right');
 const SearchResultsOption = document.querySelector('.searchresultoptions');
 const SearchOptionsContainer = document.querySelector('.searchoptionscontainer');
@@ -155,7 +157,7 @@ function fixNav() {
 
         if(!togglesearchoption || togglesearchoption===this){
             this.classList.add('search-active');
-            SearchResultsOption.style.display
+            // SearchResultsOption.style.display
         }else{
             this.classList.add('search-active');
             togglesearchoption.classList.remove('search-active');
@@ -180,6 +182,23 @@ function fixNav() {
             fullSearchBottom.innerHTML='<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><h4>Marry Turner</h4><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
         }    
         penciltoggle=!penciltoggle;
+    }
+    let lastactivesearch,parent,parent2;
+    function addSearch(e){
+        lastactivesearch= document.querySelector('searchresultsoptions__rightcardimg.active');
+        console.log(e.path[1].className);
+        if(!lastactivesearch || lastactivesearch===this){
+            this.classList.add('active');
+            parent = this.parentNode;
+            parent2= parent.parentNode;
+            console.log(this,e,parent.parentNode);
+            parent2.insertBefore(OpenSearchBox, parent.nextSibling)
+            OpenSearchBox.style.display="flex";            
+        }
+        else{
+            this.classList.add('active');
+            lastactivesearch.classList.remove('active');
+        }
     }
 
 
@@ -255,8 +274,14 @@ selectFilesBody.addEventListener('click', ()=>{
 
 window.addEventListener('scroll', fixNav);
 OpenSearch.addEventListener('click', ()=>{
+    parent = OpenSearch.parentNode;
+    parent2= parent.parentNode;
+    //console.log(parent.parentNode);
+    parent2.insertBefore(OpenSearchBox, parent.nextSibling)
     OpenSearchBox.style.display="flex";
 })
 CloseOpenSearchBox.addEventListener('click', ()=>{
     OpenSearchBox.style.display='none'
 })
+
+a.forEach(aa=> aa.addEventListener('click',addSearch));

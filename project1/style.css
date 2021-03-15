@@ -1150,3 +1150,38 @@ span.iconify{
     }
 
 }
+
+@media only screen and (min-width:1500px){
+    .searchresultsoptions__rightcardimg, .searchresultsoptions__rightcardsearch {
+        margin: 12.74px;
+        width: 115px;
+        height: 115px;
+    }
+    .fixed-nav .main .search .searchoptionscontainer {
+        width: 93%;
+    }
+    .searchresultsoptions__rightcardfullsearch{
+        width: 451px;
+    }
+    .fullsearchtop>img{
+        height: 115px;
+    }
+    .fullsearchtopinfo{
+        padding: 0px 20px;
+    }
+    .fullsearchtopinfo>h3, .fullsearchtopinfo>p {
+        margin: 10px 0px;
+    }
+    .fullsearchbottom>input{
+        margin: 5px 8px;
+    }
+    .searchresultsoptions__left{
+        min-height: 350px;
+    }
+    .searchresultsoptions__right{
+        padding-left: 1px;
+    }
+    .togglesearchbefore{
+        margin-top: 162px;
+    }
+}
