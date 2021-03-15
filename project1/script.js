@@ -27,7 +27,6 @@ const searchListingImages = document.querySelectorAll('.searchlistings img');
 const SearchResultsOptionRight = document.querySelectorAll('.searchresultsoptions__right');
 const SearchResultsOption = document.querySelector('.searchresultoptions');
 const SearchOptionsContainer = document.querySelector('.searchoptionscontainer');
-let topofSearch = SearchOptionsContainer.offsetTop;
 const SavedResultsOption = document.querySelector('.savedresultoptions');
 
 const SearchResultsOptionRightCard = document.querySelectorAll('.searchresultsoptions__rightcard');
@@ -47,10 +46,10 @@ const Search = document.querySelector('.search')
 let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=true;
 
 function fixNav() {
-    if (window.scrollY >= topofSearch) {
+    if (window.scrollY >= 129) {
       document.body.style.paddingTop = SearchOptionsContainer.offsetHeight + 'px'; //this adds a padding by calculating the height of the nav as when an element gets sticky the space it acquires gets vanished so the below elemts gets pushed up.
       document.body.classList.add('fixed-nav'); //adding a class to body helps in using it throughout the body elemets
-    } else {
+    } else{
       document.body.classList.remove('fixed-nav');
       document.body.style.paddingTop = 0;
     }
