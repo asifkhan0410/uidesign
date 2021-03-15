@@ -1023,25 +1023,26 @@ span.iconify{
     }
     .expansion{
         top: auto;
-        margin-top: 107px;
+        /* margin-top: 107px; */
         right: auto;
-        width: 85%;
+        width: 50%;
     }
     .imagesection{
-        height: 205px;
+        height: 107px;
     }
     .imagesectiontop > img {
         width: 10px;
     }
     .imagesectionbottom{
-        justify-content: flex-end;
+        /* justify-content: flex-end; */
         margin-bottom: 1px;
     }
     .imagesectionbottom>span{
-        padding: 4px;
+        padding: 0px;
+        font-size: 11px;
     }
     .imagesectionbottom1{
-        margin: 0px 40px 0px 5px;
+        margin: 0px 5px 0px 5px;
     }
     .estatedetails{
         margin: 5px 0px;
@@ -1049,42 +1050,46 @@ span.iconify{
     }
     .estatedetail{
         flex: 0.3;
+        align-items: center;
+    }
+    .estatedetail>img{
+        width: 20px;
     }
     .estatedetail>h3{
         margin: 0px;
-        font-size: 9px;
+        font-size: 7px;
     }
     .estatelocation, .estatetags {
         margin: 0px 15px;
     padding-bottom: 10px;
     }
     .estatelocation>h1{
-        font-size: 15px;
+        font-size: 9px;
     }
     .estatelocation>p{
-        font-size: 12px;
+        font-size: 7px;
     }
     .estatetags>h2{
-        margin: 16px 0px 6px;
-    font-size: 13px;
+        margin: 10px 0px 6px;
+    font-size: 8px;
     }
     .estatetags>p{
-        font-size: 10px;
+        font-size: 7px;
     }
     .estateoptions>h1{
-        font-size: 15px;
-        padding: 8px 30px;
+        font-size: 10px;
+        padding: 8px;
     }
     .estateoptions>h3{
-        font-size: 12px;
-        padding: 10px 30px;
+        font-size: 8px;
+        padding: 10px;
     }
     .estateoptions>img {
         padding: 2px 10px;
-        width: 13px;
+        width: 10px;
     }
     .expansion>h1{
-        font-size: 12px;
+        font-size: 10px;
         padding: 10px 0px;
     }
     .imagexpand{

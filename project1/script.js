@@ -121,15 +121,15 @@ function fixNav() {
         fullSearchBottom.innerHTML = '<img src="./images/stop-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
         if(!searchimageactive || searchimageactive===this){
             this.classList.add('searchimageactive');
-            searchListing.style.width="66.8%";
+            searchListing.style.width=`${window.screen.width>415?"66.8%":"50%"}`;
             searchListing.style.marginRight='4px'
-            searchListingImages.forEach(sli => sli.style.width='24%');
+            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"100%"}`);
             ExpandBox.style.display='flex';            
         }else{
             ExpandBox.style.display='flex';
-            searchListing.style.width="66.8%";
+            searchListing.style.width=`${window.screen.width>415?"66.8%":"50%"}`;
             searchListing.style.marginRight='4px'
-            searchListingImages.forEach(sli => sli.style.width='24%');
+            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"100%"}`);
             this.classList.add('searchimageactive');
             searchimageactive.classList.remove('searchimageactive');
         }
@@ -214,7 +214,7 @@ ExpandBoxCloseButton.addEventListener('click', ()=>{
     ExpandBox.style.display="none";
     searchListing.style.width="100%";
     searchListing.style.marginRight='0px'
-    searchListingImages.forEach(sli => sli.style.width='16%');
+    searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"16%":"47%"}`);
     searchimageactive.classList.remove('searchimageactive');
     fullSearchBottom.innerHTML = '<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/save-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>';
 });
