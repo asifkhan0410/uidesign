@@ -370,6 +370,7 @@ span.iconify{
     transform: scale(1.02) translateY(10px);
     height: fit-content;
     width: 32%;
+    z-index: 0;
     background-color: white;
     border: 2px solid #807F7B;
     padding: 0px;
@@ -526,11 +527,9 @@ span.iconify{
 .searchoptionscontainer{
     display: flex;
     flex-direction: column;
-    /* position: fixed; */
     background-color: white;
-    /* top: 0; */
+    z-index: 4;
     width: 100%;
-    /* width: 91%; */
 }
 .fixed-nav .main .search .searchoptionscontainer{
     position: fixed;
