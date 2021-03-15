@@ -368,7 +368,7 @@ span.iconify{
 .expansion{
     display: none;
     flex-direction: column;
-    transform: scale(1.02) translateY(10px);
+    transform: translateY(4px);
     height: fit-content;
     width: 32%;
     z-index: 0;
@@ -1202,5 +1202,8 @@ span.iconify{
     }
     .savedresults.search-active::after {
         width: 119px;
+    }
+    .expansion{
+        transform: translateY(3px);
     }
 }
