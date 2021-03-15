@@ -243,6 +243,7 @@ ExpandBoxCloseButton.addEventListener('click', ()=>{
 
 ExpandBoxExpandButton.addEventListener('click',()=>{
     ImageExpand.style.display='flex';
+    window.scroll="none"
 });
 ImageExpandClose.addEventListener('click', ()=>{ 
     ImageExpand.style.display='none'

@@ -500,8 +500,10 @@ span.iconify{
 
 .imagexpand{
     background-color: rgb(1 46 90 / 89%);
-    position: absolute;
+    position: fixed;
+    top: 0;
     padding: 30px;
+    z-index: 7;
     width: -webkit-fill-available;
     display: none;
     flex-direction: column;
