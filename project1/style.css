@@ -209,7 +209,7 @@ span.iconify{
     display: flex;
     flex-wrap: wrap;
     cursor: pointer;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .popularlistings>img , .searchlistings>img{
@@ -363,6 +363,7 @@ span.iconify{
 /* Expand Box */
 .searchlistingscontainer{
     display: flex;
+    justify-content: space-between;
 }
 .expansion{
     display: none;
@@ -544,19 +545,19 @@ span.iconify{
 .searchresultsoptions__left{
     background-color: #F9F5F5;
     flex: 0.48;
-    padding: 5px 25px 5px 5px;
+    padding: 5px 25px 5px 13px;
 }
 .searchresultoptions{
     display: flex;
     width:100%;
     align-self: flex-start;
-    margin-left: 8px;
+    margin-left: 0px;
     margin-top: 8px;
 }
 .searchoptions{
     display: flex;
     background-color: #85BEE4;
-    width: 98%;
+    width: 99%;
     padding: 5px;
     border: 1px solid rgb(112 112 112 / 30%);
     border-radius: 4px;
@@ -579,9 +580,9 @@ span.iconify{
 .searchresults.search-active::after,.savedresults.search-active::after{
     content: '';
     position: absolute;
-    height: 19px;
+    height: 28px;
     width: 120px;
-    margin: 27px -108px;
+    margin: 23px -108px;
     background-color: inherit;
 }
 .savedresults.search-active::after{
@@ -643,6 +644,7 @@ span.iconify{
 .searchresultsoptions__right{
     display: flex;
     flex: 0.54;
+    padding-left: 5px;
 }
 .togglesearchbefore{
     content: url(./images/triangle-solid.svg);
@@ -650,17 +652,22 @@ span.iconify{
     margin-left: -18px;
     margin-top: 120px;
 }
+.searchresultsoptions__rightcard.selectopensearch{
+    display: none;
+    width: auto;
+}
 
 .searchresultsoptions__rightcard{
+    width: 16%;
     display: flex;
     height: fit-content;
     flex-direction: column;
-    margin: 3.5px;
+    margin: 4px;
     align-items: center;
     border: 2px solid #C5C3BC;
 }
 .searchresultsoptions__rightcardimg,.searchresultsoptions__rightcardsearch{
-    margin: 12px;
+    margin: 11.8px;
     height: 74px;
     width: 74px;
     border-radius: 50%;
@@ -687,7 +694,7 @@ span.iconify{
     align-items: center;
     padding: 2px;
 }
-.fullsearchtop::after{
+.fullsearchtopafter{
     content: '';
     height: 40px;
     width: 6px;

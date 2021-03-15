@@ -23,7 +23,10 @@ const searchListing = document.querySelector('.searchlistings');
 
 
 const searchListingImages = document.querySelectorAll('.searchlistings img');
-
+const OpenSearch = document.querySelector('.searchresultsoptions__rightcardsearch');
+const OpenSearchBox = document.querySelector('.searchresultsoptions__rightcard.selectopensearch');
+const CloseOpenSearchBox = document.querySelector('.fullsearchtopafter');
+console.log(OpenSearch,OpenSearchBox,CloseOpenSearchBox);
 const SearchResultsOptionRight = document.querySelectorAll('.searchresultsoptions__right');
 const SearchResultsOption = document.querySelector('.searchresultoptions');
 const SearchOptionsContainer = document.querySelector('.searchoptionscontainer');
@@ -251,3 +254,9 @@ selectFilesBody.addEventListener('click', ()=>{
 });
 
 window.addEventListener('scroll', fixNav);
+OpenSearch.addEventListener('click', ()=>{
+    OpenSearchBox.style.display="flex";
+})
+CloseOpenSearchBox.addEventListener('click', ()=>{
+    OpenSearchBox.style.display='none'
+})
