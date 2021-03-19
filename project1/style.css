@@ -543,12 +543,12 @@ span.iconify{
 }
 .fixed-nav .main .search .searchoptionscontainer{
     position: fixed;
-    top: 20%;
+    top: 13%;
     width: 91%;
 }
 .fixed-nav .main .search >h2{
     position: fixed;
-    top: 12%;
+    top: 8%;
     width: 94%;
     z-index: 4;
     background-color: white;
@@ -1250,12 +1250,12 @@ span.iconify{
     }
     .fixed-nav .main .search .searchoptionscontainer{
         position: fixed;
-        top: 17%;
+        top: 10%;
         width: 93%;
     }
     .fixed-nav .main .search >h2{
         position: fixed;
-        top: 10%;
+        top: 6%;
         width: 94%;
         z-index: 4;
         background-color: white;
