@@ -1185,7 +1185,9 @@ span.iconify{
     .signupdialogbox> form, .signindialogbox>form, .forgetpassword>form {
         width: auto;
     }
-
+    .fixed-nav .main .search >h2 {
+        top:10%;
+    }
 }
 
 @media only screen and (min-width:1500px){
