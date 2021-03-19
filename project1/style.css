@@ -534,10 +534,26 @@ span.iconify{
     z-index: 4;
     width: 100%;
 }
+.fixed-nav .main .navigation{
+    position: fixed;
+    top:0;
+    margin-top: 0;
+    z-index: 5;
+    width: 92.7%;
+}
 .fixed-nav .main .search .searchoptionscontainer{
     position: fixed;
-    top: 0;
+    top: 17%;
     width: 91%;
+}
+.fixed-nav .main .search >h2{
+    position: fixed;
+    top: 10%;
+    width: 94%;
+    z-index: 4;
+    background-color: white;
+    padding: 12px 0px;
+    text-align: center;
 }
 .search>h2{
     margin: 0px 0px 10px;
@@ -559,8 +575,8 @@ span.iconify{
 .searchoptions{
     display: flex;
     background-color: #85BEE4;
-    width: 99%;
-    padding: 5px;
+    width: 99.5%;
+    padding: 5px 0px 5px 5px;
     border: 1px solid rgb(112 112 112 / 30%);
     border-radius: 4px;
 }
@@ -646,13 +662,16 @@ span.iconify{
 .searchresultsoptions__right{
     display: flex;
     flex: 0.54;
+    overflow-x: scroll;
     padding-left: 5px;
 }
 .togglesearchbefore{
-    content: url(./images/triangle-solid.svg);
     position: absolute;
-    margin-left: -18px;
-    margin-top: 120px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #64b3e8;
+    margin-left:17.5%;
+    margin-top: -4%;
 }
 .searchresultsoptions__rightcard.selectopensearch{
     display: none;
@@ -779,7 +798,7 @@ span.iconify{
 
 .savedresultoptions{
     display: none;
-    width: 99%;
+    width: 100%;
     background-color: #f9f5f5;
     min-height: 350px;
     flex-direction: column;
@@ -879,6 +898,13 @@ span.iconify{
     .navigation{
         margin: 20px 15px 0px;
     }
+
+    .fixed-nav .main .navigation {
+        width:92%;
+    }
+    .fixed-nav .main .search .searchoptionscontainer{
+        top:15%;
+    }
     .navigation__list{
         flex: 0.9;
     }
@@ -957,10 +983,11 @@ span.iconify{
     }
     .searchresults.search-active::after, .savedresults.search-active::after {
         width: 100px;
-        margin: 20px -87px;
+        margin: 20px -89.5px;
     }
     .savedresults.search-active::after {
-        margin: 20px -85px;
+        margin: 20px -87px;
+        height: 18px;
     }
     .searchresultoptions {
         flex-direction: column;
@@ -968,6 +995,14 @@ span.iconify{
     }
     .closesearchresults{
         font-size: 10px;
+    }
+    .searchresultsoptions__right{
+        padding-left: 0px;
+        margin-top: 10px;
+    }
+    .searchresultsoptions__rightcard{
+        margin:  6px 6px 6px 0px;
+        width:20%;
     }
     .searchresultsoptions__leftfiltersoptions>button, .sro_lfoleft>button, .sro_lforight>button, .searchresultsoptions__leftbuttons>button {
         font-size: 8px;
@@ -979,16 +1014,16 @@ span.iconify{
     }
     .searchresultsoptions__rightcardimg, .searchresultsoptions__rightcardsearch {
         margin: 8px;
-        height: 53px;
-        width: 53px;
+        height: 40px;
+        width: 40px;
     }
     .searchresultsoptions__left{
         padding: 5px 5px 20px 5px;
     }
     .togglesearchbefore{
-        transform: rotate(90deg);
-        margin-left: 141px;
-        margin-top: -18px;
+        font-size: 10px;
+        margin-left: 115px;
+        margin-top: -10px;
     }
     .searchresultsoptions__rightcard>h4 {
         font-size: 7px;
@@ -997,30 +1032,30 @@ span.iconify{
         width: 231px;
     }
     .fullsearchtop{
-        padding: 5px 2px;
+        padding: 2px;
     }
-    .fullsearchtop::after{
-        height: 30px;
-    width: 4px;
+    .fullsearchtopafter{
+        height: 20px;
+    width: 3px;
     margin-top: 8px;
     margin-right: -3px;
     }
     .fullsearchtop>img{
-        height: 50px;
+        height: 40px;
         margin: 5px;
     }
     .fullsearchtopinfoheader>h1 {
-        font-size: 9px;
+        font-size: 8px;
     }
     .fullsearchtopinfoheader>p {
-        font-size: 7px;
+        font-size: 6px;
     }
     .fullsearchtopinfo>h3, .fullsearchtopinfo>p {
         margin: 2px 0px;
         font-size: 7px;
     }
     .fullsearchbottom>input {
-        margin: 2px 8px;
+        margin: 1px 8px 2px;
         font-size: 8px;
     }
     .fullsearchbottom>h4 {
@@ -1159,6 +1194,7 @@ span.iconify{
         width: 115px;
         height: 115px;
     }
+    
     .fixed-nav .main .search .searchoptionscontainer {
         width: 93%;
     }
@@ -1184,7 +1220,8 @@ span.iconify{
         padding-left: 1px;
     }
     .togglesearchbefore{
-        margin-top: 162px;
+        margin-left: 20%;
+        margin-top: -4%;
     }
     .imagesection{
         background-size: cover;

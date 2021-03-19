@@ -51,7 +51,7 @@ const Search = document.querySelector('.search')
 let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=true;
 
 function fixNav() {
-    if (window.scrollY >= 129) {
+    if (window.scrollY >= 20) {
       document.body.style.paddingTop = SearchOptionsContainer.offsetHeight + 'px'; //this adds a padding by calculating the height of the nav as when an element gets sticky the space it acquires gets vanished so the below elemts gets pushed up.
       document.body.classList.add('fixed-nav'); //adding a class to body helps in using it throughout the body elemets
     } else{
@@ -141,10 +141,10 @@ function fixNav() {
     }
     function toggleSearchRight(){
         if(!togglesearchright){
-            SearchResultsOptionRightCard.forEach(sror => sror.style.display='none');SearchResultsOptionRightToggle.style.right=`${window.screen.width>415 ?'62px':'auto'}`;
-            SearchResultsOptionRight.forEach(sror => sror.style.backgroundColor='#F9F5F5');
+            SearchResultsOptionRightCard.forEach(sror => sror.style.display='none');SearchResultsOptionRightToggle.innerHTML="- Open Search Results";
+            SearchResultsOptionRight.forEach(sror => sror.style.backgroundColor='white');
          }else{
-             SearchResultsOptionRightCard.forEach(sror => sror.style.display='flex'); SearchResultsOptionRightToggle.style.right='auto' ;
+             SearchResultsOptionRightCard.forEach(sror => sror.style.display='flex'); SearchResultsOptionRightToggle.innerHTML="- Close Search Results";
             SearchResultsOptionRight.forEach(sror => sror.style.backgroundColor='white');
 
          }
