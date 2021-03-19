@@ -539,12 +539,12 @@ span.iconify{
     top:0;
     margin-top: 0;
     z-index: 5;
-    width: 90.7%;
+    width: 90.5%;
 }
 .fixed-nav .main .search .searchoptionscontainer{
     position: fixed;
     top: 13%;
-    width: 91%;
+    width: 90.5%;
 }
 .fixed-nav .main .search >h2{
     position: fixed;
@@ -1246,7 +1246,7 @@ span.iconify{
         top:0;
         margin-top: 0;
         z-index: 5;
-        width: 92.7%;
+        width: 92.8%;
     }
     .fixed-nav .main .search .searchoptionscontainer{
         position: fixed;
@@ -1261,5 +1261,21 @@ span.iconify{
         background-color: white;
         padding: 12px 0px;
         text-align: center;
+    }
+    .searchresultsoptions__leftfiltersoptions>button, .sro_lfoleft>button, .sro_lforight>button, .searchresultsoptions__leftbuttons>button {
+        flex: 1;
+        border: 3px solid #807F7B;
+        padding: 13px;
+        margin: 3px;
+        color: #807F7B;
+        font-size: 16px;
+        outline: none;
+        font-weight: 600;
+        background-color: #F9F5F5;
+    }
+    .searchresultsoptions__leftbuttons>button {
+        background-color: #64B3E8;
+        color: white;
+        border: none;
     }
 }

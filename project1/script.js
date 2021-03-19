@@ -191,7 +191,7 @@ function fixNav() {
             this.classList.add('active');
             parent = this.parentNode;
             parent2= parent.parentNode;
-            console.log(this,e,parent.parentNode);
+            parent.style.display="none";
             parent2.insertBefore(OpenSearchBox, parent.nextSibling)
             OpenSearchBox.style.display="flex";            
         }
@@ -278,11 +278,13 @@ OpenSearch.addEventListener('click', ()=>{
     parent = OpenSearch.parentNode;
     parent2= parent.parentNode;
     //console.log(parent.parentNode);
+    parent.style.display = "none";
     parent2.insertBefore(OpenSearchBox, parent.nextSibling)
     OpenSearchBox.style.display="flex";
 })
 CloseOpenSearchBox.addEventListener('click', ()=>{
-    OpenSearchBox.style.display='none'
+    OpenSearchBox.style.display='none';
+    parent.style.display="flex";
 })
 
 a.forEach(aa=> aa.addEventListener('click',addSearch));
