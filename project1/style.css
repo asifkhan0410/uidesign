@@ -902,6 +902,7 @@ span.iconify{
 
     .fixed-nav .main .navigation {
         width:92%;
+        margin: auto 14px;
     }
     .fixed-nav .main .search .searchoptionscontainer{
         top:15%;
