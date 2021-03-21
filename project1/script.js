@@ -70,7 +70,6 @@ function fixNav() {
         Body.style.display='flex';
         selectFilesBody.style.display='none'
         currentactivebody.classList.add('activebody');
-        activebody.classList.remove('activebody');
         if(this.classList[1]==='item4'||this.classList[1]==='item5'){
             Body.style.backgroundColor = 'white';
             Body.style.border='none'
@@ -86,6 +85,8 @@ function fixNav() {
           }else{
             this.classList.add("active");
             activepanel.classList.remove('active') ;
+            activebody.classList.remove('activebody');
+
           }
       }
 

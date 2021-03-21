@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>UI design</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 <body>
-    <div class="main">
-        <div class="navigation">
-            <div class="navigation__list">
+    <div class=" container-fluid main">
+        <div class="row navigation">
+            <div class="navigation__list col-lg-10 col-md-10 col-sm-10 col-xs-10">
             <div class="navigation__listitem item1 active">
                 <span class="iconify" data-icon="grommet-icons:personal-computer" data-inline="false"></span>
                 <h3>My Files</h3>
@@ -32,7 +35,7 @@
                 <h3 style="height: 26px;">Architectural Style</h3>
             </div>
             </div>
-            <div class="loginsignup">
+            <div class="loginsignup col-lg-1 col-md-1 col-sm-1 col-xs-1">
                 <span class="iconify"><img src="./images/user-cog-regular.svg"/></span>
             </div>
         </div>
