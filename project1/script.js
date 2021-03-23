@@ -6,6 +6,7 @@ const Body = document.querySelector('.navigation__body');
 const fitlerActive = document.querySelectorAll('.filteractive');
 const popularListings = document.querySelector('.popularlistings');
 const filteredListings = document.querySelector('.filtered');
+const SearchHeader = document.querySelector('.searcheader')
 const imagesListing1 = popularListings.querySelectorAll('img');
 const imagesListing2 = filteredListings.querySelectorAll('img');
 const signInButton = document.querySelector('.loginsignup');
@@ -57,6 +58,7 @@ function fixNav() {
         Navbar.style.width = `${Navbar.offsetWidth}px`;
         SearchOptionsContainer.style.width = `${Navbar.offsetWidth}px`;
         SearchOptionsContainer.style.top = `${SearchOptionsContainer.offsetTop - Navbar.offsetTop}px`;
+        SearchHeader.style.top = `${Navbar.offsetHeight + Navbar.offsetTop}px`
       document.body.style.paddingTop = SearchOptionsContainer.offsetHeight + 'px'; //this adds a padding by calculating the height of the nav as when an element gets sticky the space it acquires gets vanished so the below elemts gets pushed up.
       document.body.classList.add('fixed-nav'); //adding a class to body helps in using it throughout the body elemets
     } else{
@@ -181,8 +183,12 @@ function fixNav() {
         penciltoggle=!penciltoggle;
     }
     let lastactivesearch,parent,parent2;
+
     function addSearch(e){
-        lastactivesearch= document.querySelector('searchresultsoptions__rightcardimg.active');
+        lastactivesearch= document.querySelector('searchresultsoptions__rightcardimg.active'); 
+        if(lastactivesearch!==this && parent){
+            parent.style.display="flex";
+        }
         console.log(e.path[1].className);
         if(!lastactivesearch || lastactivesearch===this){
             this.classList.add('active');
@@ -195,7 +201,7 @@ function fixNav() {
         else{
             this.classList.add('active');
             lastactivesearch.classList.remove('active');
-        }
+        }  
     }
 
 

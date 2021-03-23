@@ -919,14 +919,14 @@ span.iconify{
   }
   
 
-@media screen and (max-width:412px){
+@media screen and (max-width:415px){
     .navigation{
-        margin: 20px 15px 0px;
+        margin: 20px 0px 0px;
     }
 
     .fixed-nav .main .navigation {
         width:92%;
-        margin: auto 14px;
+        margin:0px;
     }
     .fixed-nav .main .search .searchoptionscontainer{
         top:15%;
@@ -934,30 +934,33 @@ span.iconify{
     .navigation__list{
         flex: 0.9;
     }
-    .navigation__listitem>h3{
+    .navigation__listitem>a>h3{
         font-size: 9px;
         margin: 0px;
         text-align: center;
         height: 25px;
         line-height: 12px;
     }
-    .navigation__body{
-        margin: 5px 15px 0px;
+    .nav>li>a{
+        padding: 10px 0px;
     }
-    .body.item1>h2, .body.item2>h2{
+    .navigation__body{
+        margin: 15px 0px 0px;
+    }
+    #myfiles>h2, #facebook>h2{
         font-size: 1rem;
     }
-    .body.item1 >button, .body.item2 >button, .featuresearch>button {
-        font-size: 15px;
+    #myfiles >button, #facebook >button, .featuresearch>button {
+        font-size: 10px;
     }
-    .body.item1>p, .body.item2>p, .body.item3>p{
+    #myfiles>p, #facebook>p, #featuresearch>p{
         font-size: 10px;
     }
     .featuresearch>input{
         width: 225px;
         font-size: 7px;
     }
-    .body.item4>h2 {
+    #popularlisting>h2 {
         margin: 0 0 10px;
         font-size: 10px;
     }
@@ -996,7 +999,7 @@ span.iconify{
         flex: 0.3;
     }
     .search{
-        margin: 5px 20px 0px;
+        margin: 5px 0px 0px;
     }
     .search>h2{
         font-size: 10px;
@@ -1009,15 +1012,15 @@ span.iconify{
     }
     .searchresults.search-active::after, .savedresults.search-active::after {
         width: 100px;
-        margin: 20px -89.5px;
+        margin: 20px -86px;
     }
     .savedresults.search-active::after {
-        margin: 20px -87px;
+        margin: 20px -84px;
         height: 18px;
     }
     .searchresultoptions {
         flex-direction: column;
-        margin-left: 3px;
+        margin-left: 0px;
     }
     .closesearchresults{
         font-size: 10px;
