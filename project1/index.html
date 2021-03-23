@@ -13,52 +13,52 @@
 <body>
     <div class=" container-fluid main">
         <div class="row navigation">
-            <div class="navigation__list col-lg-10 col-md-10 col-sm-10 col-xs-10">
-            <div class="navigation__listitem item1 active">
-                <span class="iconify" data-icon="grommet-icons:personal-computer" data-inline="false"></span>
-                <h3>My Files</h3>
-            </div>
-            <div class="navigation__listitem item2">
-                <span class="iconify" data-icon="carbon:logo-facebook" data-inline="false"></span>
-                <h3>Facebook</h3>
-            </div>
-            <div class="navigation__listitem item3">
-                <span class="iconify" data-icon="fa:text-width" data-inline="false"></span>
-                <h3>Feature Search</h3>
-            </div>
-            <div class="navigation__listitem item4">
-                <span class="iconify" data-icon="fa-regular:images" data-inline="false"></span>
-                <h3>Popular Listing</h3>
-            </div>
-            <div class="navigation__listitem item5">
-                <span class="iconify"><img src="./images/image-light.svg"/></span>
-                <h3 style="height: 26px;">Architectural Style</h3>
-            </div>
-            </div>
-            <div class="loginsignup col-lg-1 col-md-1 col-sm-1 col-xs-1">
+            <ul class="navigation__list col-lg-10 col-md-10 col-sm-10 col-xs-10 nav nav-tabs">
+            <li class="navigation__listitem active">
+               <a data-toggle="tab" href="#myfiles"> <span class="iconify" data-icon="grommet-icons:personal-computer" data-inline="false"></span>
+                <h3>My Files</h3></a>
+            </li>
+            <li class="navigation__listitem">
+                <a data-toggle="tab" href="#facebook"><span class="iconify" data-icon="carbon:logo-facebook" data-inline="false"></span>
+                <h3>Facebook</h3></a>
+            </li>
+            <li class="navigation__listitem">
+                <a data-toggle="tab" href="#featuresearch"><span class="iconify" data-icon="fa:text-width" data-inline="false"></span>
+                <h3>Feature Search</h3></a>
+            </li>
+            <li class="navigation__listitem item4">
+                <a data-toggle="tab" href="#popularlisting"><span class="iconify" data-icon="fa-regular:images" data-inline="false"></span>
+                <h3>Popular Listing</h3></a>
+            </li>
+            <li class="navigation__listitem item5">
+                <a data-toggle="tab" href="#archistyle"><span class="iconify"><img src="./images/image-light.svg"/></span>
+                <h3 style="height: 26px;">Architectural Style</h3></a>
+            </li>
+        </ul>
+            <div class="loginsignup col-lg-1 col-md-1 col-sm-1 col-xs-1 " data-toggle="modal" data-target="#myModal">
                 <span class="iconify"><img src="./images/user-cog-regular.svg"/></span>
             </div>
         </div>
-        <div class="navigation__body">
-            <div class="body item1 activebody">
+        <div class="navigation__body tab-content">
+            <div id="myfiles" class="body tab-pane fade in active">
                 <h2>Drop here</h2>
                 <h2>or</h2>
                 <button>Select Files</button>
                 <p>File type accepted .jpg, .png</p>
             </div>
-            <div class="body item2">
+            <div id="facebook" class="body tab-pane fade">
                 <h2>Upload files from your Facebook account</h2>
                 <button>Select Files</button>
                 <p>We will not post anything without your permission</p>
             </div>
-            <div class="body item3">
+            <div id="featuresearch" class="body tab-pane fade">
                 <span class="featuresearch">
                     <input placeholder="Search for similar images by typing features you want to have in a home"/>
                     <button>Search</button>
                 </span>
                 <p>For example type: kitchen with wood floors, stainless steel appliances</p>
             </div>
-            <div class="body item4">
+            <div id="popularlisting" class="body tab-pane fade">
                 <h2>Most Popular Listings</h2>
                 <div class="popularlistings">
                     <img src="./images/french.jpg" alt="listing"/>
@@ -123,7 +123,7 @@
                     <img src="./images/french.jpg" alt="listing"/>                    
                 </div>
             </div>
-            <div class="body item5">
+            <div id="archistyle" class="body tab-pane fade">
                 <div class="filters">
                     <div class="filter"><h3><span class="filteractive clicked"> </span>Cape Cod</h3></div>
                     <div class="filter"><h3><span class="filteractive"> </span>Country French</h3></div>
@@ -539,9 +539,15 @@
             <h2>Powered by</h2>
             <img src="./images/ShowoffLogo.png" alt="showoff logo"/>
         </div>
-        <div class="signupdialogbox">
-            <h2>Signup</h2>
-            <form>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                <div class="signupdialogbox">
+                <h2>Signup</h2>
+                <form>
                 <div class="formline">
                     <div class="inputfield leftinputfield"><img src="./images/user-alt-regular.svg" alt="user name"/><input type="text"/></div>
                     <div class="inputfield"><img src="./images/user-alt-regular.svg" alt="username"/><input type="text"/></div>
@@ -575,6 +581,9 @@
                 <button>Get Password</button>
             </form>
             <p>Don't have an account? <a  class="signupbutton" href="#">signup</a></p>
+        </div>
+    </div>
+            </div>
         </div>
     </div>
   

@@ -1,4 +1,6 @@
 const navbarList = document.querySelectorAll('.navigation__listitem');
+const Navbar = document.querySelector('.navigation');
+const FullBody = document.querySelector('body');
 const navbarListBody = document.querySelectorAll('.body');
 const Body = document.querySelector('.navigation__body');
 const fitlerActive = document.querySelectorAll('.filteractive');
@@ -20,7 +22,7 @@ const ImageExpand =document.querySelector('.imagexpand');
 const ImageExpandClose = document.querySelector('.imagexpandtop');
 
 const searchListing = document.querySelector('.searchlistings');
-
+console.log(Navbar.offsetWidth);
 
 const searchListingImages = document.querySelectorAll('.searchlistings img');
 const OpenSearch = document.querySelector('.searchresultsoptions__rightcardsearch');
@@ -52,6 +54,9 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
 
 function fixNav() {
     if (window.scrollY >= 20) {
+        Navbar.style.width = `${Navbar.offsetWidth}px`;
+        SearchOptionsContainer.style.width = `${Navbar.offsetWidth}px`;
+        SearchOptionsContainer.style.top = `${SearchOptionsContainer.offsetTop - Navbar.offsetTop}px`;
       document.body.style.paddingTop = SearchOptionsContainer.offsetHeight + 'px'; //this adds a padding by calculating the height of the nav as when an element gets sticky the space it acquires gets vanished so the below elemts gets pushed up.
       document.body.classList.add('fixed-nav'); //adding a class to body helps in using it throughout the body elemets
     } else{
@@ -64,12 +69,13 @@ function fixNav() {
       
     function toggleTab(){
         activepanel= document.querySelector('.navigation__listitem.active');
-        activebody= document.querySelector('.body.activebody');
-        currentactivebody = document.querySelector(`.body.${this.classList[1]}`);
+        //activebody= document.querySelector('.body.active');
+        //currentactivebody = document.querySelector(`.body.${this.classList[1]}`);
         Search.style.display='none';
         Body.style.display='flex';
         selectFilesBody.style.display='none'
-        currentactivebody.classList.add('activebody');
+        //currentactivebody.classList.add('activebody');
+        //console.log(this.classList)
         if(this.classList[1]==='item4'||this.classList[1]==='item5'){
             Body.style.backgroundColor = 'white';
             Body.style.border='none'
@@ -78,16 +84,6 @@ function fixNav() {
             Body.style.border='2px dashed rgb(1 35 69 / 30%)'
         }
         
-          if(!activepanel && !activebody){
-            this.classList.add('active');
-          }else if(activepanel===this && activebody===currentactivebody){
-            this.classList.add("active");
-          }else{
-            this.classList.add("active");
-            activepanel.classList.remove('active') ;
-            activebody.classList.remove('activebody');
-
-          }
       }
 
       function toggleClick(){
@@ -208,13 +204,9 @@ fitlerActive.forEach(fa => fa.addEventListener('click', toggleClick));
 imagesListing1.forEach(iml => iml.addEventListener('click', toggleBorder));
 imagesListing2.forEach(iml => iml.addEventListener('click', toggleBorderFilter));
 signInButton.addEventListener('click', ()=>{
-    if(!togglesignin) signUpBox.style.display = 'flex';
-    else{
-        signUpBox.style.display = 'none';
-        signInBox.style.display='none';
-        passwordBox.style.display= 'none'
-    }
-    togglesignin=!togglesignin;    
+    signUpBox.style.display = 'flex';
+    signInBox.style.display='none';
+    passwordBox.style.display= 'none' 
 });
 
 forgetpasswordLink.addEventListener('click', ()=>{
@@ -228,7 +220,7 @@ signInLink.addEventListener('click', ()=>{
 });
 signUpLink.forEach(sign => sign.addEventListener('click', ()=>{
     signInBox.style.display='none';
-    passwordBox.style.display= 'none'
+    passwordBox.style.display= 'none';
     signUpBox.style.display='flex';
 }));
 

@@ -15,7 +15,7 @@ body{
     margin: 20px 70px 0px;
     justify-content: space-between;
     /* width: 3560px; */
-    height: 62px;
+    min-height: 62px;
     background: #F9F5F5 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     border-radius: 4px;
@@ -37,6 +37,21 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
+.nav>li>a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 15px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: transparent;
+    border: none;
+}
+.nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+    background-color: transparent;
+    border: none;
+}
 .active{
     border-bottom: 3px solid #64B3E8;
 }
@@ -48,7 +63,7 @@ span.iconify{
     height: 22px;
     color: #64B3E8;
 }
-.navigation__listitem>h3{
+.navigation__listitem>a>h3{
     width: auto;
     height: 20px;
     margin: 0px;
@@ -158,16 +173,16 @@ span.iconify{
     align-items: center;
     flex-direction: column;
 }
-.activebody{
-    display: flex;   
-    
+.body.active{
+    display: flex; 
+    border-bottom: none;     
 }
-.body.item1>h2, .body.item2>h2{
+#myfiles>h2, #facebook>h2{
     margin: 0;
     color: #64B3E8;
 }
 
-.body.item1 >button, .body.item2 >button, .featuresearch>button{
+#myfiles >button, #facebook >button, .featuresearch>button{
     margin: 10px 0px;
     padding: 5px 10px;
     color: white;
@@ -179,17 +194,18 @@ span.iconify{
     border-radius: 4px;
 }
 .featuresearch>button{
-    border: 1px solid #707070;
+    border: 1px solid #707070; 
 }
-.body.item1>p , .body.item2>p, .body.item3>p{
+#myfiles>p , #facebook>p, #featuresearch>p{
     margin: 0;
     font-size: 14px;
+    text-decoration: none;
     color:rgb(112 112 112 / 30%);
 }
-.body.item3{
-    align-items: initial;
+#popularlisting{
+    align-items: center;
 }
-.body.item4>h2{
+#popularlisting>h2{
     margin: 0 0 10px;
     font-size: 17px;
     font-weight: 500;
@@ -205,6 +221,10 @@ span.iconify{
     font-size: 20px;
     border-bottom: 1px solid;
 }
+/* .item4.active .navigation__body  ,.navigation__body .item5.active{
+    background-color: white;
+    border: 2px dashed white ;
+} */
 .popularlistings,.searchlistings{
     display: flex;
     flex-wrap: wrap;
@@ -277,11 +297,10 @@ span.iconify{
 .signupdialogbox, .signindialogbox, .forgetpassword{
     background-color: #64B3E8;
     width: fit-content;
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    right: 30%;
-    box-shadow: 10px 10px 25px lightgrey;
+    position: relative;
+    z-index: 100;
+    overflow-y: auto;
+    /* box-shadow: 10px 10px 25px lightgrey; */
     display: none;
     margin: auto;
     padding: 20px;
@@ -346,7 +365,7 @@ span.iconify{
 }
 .inputfield>input{
     border: none;
-    padding: 3px;
+    padding: revert;
     outline: none;
 }
 .leftinputfield{
@@ -538,9 +557,8 @@ span.iconify{
     position: fixed;
     top:0;
     margin-top: 0;
-    margin: 0px 69px;
+    margin: 0px 70px;
     z-index: 5;
-    width: 90.5%;
 }
 .fixed-nav .main .search .searchoptionscontainer{
     position: fixed;
@@ -553,7 +571,7 @@ span.iconify{
     width: 94%;
     z-index: 4;
     background-color: white;
-    padding: 12px 0px;
+    padding: 15px 0px;
     text-align: center;
 }
 .search>h2{
@@ -576,7 +594,7 @@ span.iconify{
 .searchoptions{
     display: flex;
     background-color: #85BEE4;
-    width: 99.5%;
+    width: 100%;
     padding: 5px 0px 5px 5px;
     border: 1px solid rgb(112 112 112 / 30%);
     border-radius: 4px;
@@ -601,11 +619,11 @@ span.iconify{
     position: absolute;
     height: 28px;
     width: 120px;
-    margin: 23px -108px;
+    margin: 23px -105px;
     background-color: inherit;
 }
 .savedresults.search-active::after{
-    margin:25px -105px;
+    margin:25px -103px;
 }
 .searchresultsoptions__leftfilters{
     display: flex;
@@ -892,6 +910,12 @@ span.iconify{
 ::-webkit-scrollbar-thumb {
     background: #64B3E8; 
     border-radius: 2px;
+  }
+
+  .modal-content{
+      box-shadow: none;
+      background-color: transparent;
+      border: none;
   }
   
 
@@ -1262,7 +1286,7 @@ span.iconify{
         width: 94%;
         z-index: 4;
         background-color: white;
-        padding: 12px 0px;
+        padding: 15px 0px;
         text-align: center;
     }
     .searchresultsoptions__leftfiltersoptions>button, .sro_lfoleft>button, .sro_lforight>button, .searchresultsoptions__leftbuttons>button {
