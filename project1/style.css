@@ -229,12 +229,16 @@ span.iconify{
     display: flex;
     flex-wrap: wrap;
     cursor: pointer;
+    margin: -7px;
     justify-content: space-between;
 }
 
 .popularlistings>img , .searchlistings>img{
-    width: 16%;
-    margin: 4px 0px;
+    /* width: 16%; */
+    padding: 10px;
+}
+.col-lg-2, .col-md-2, .col-sm-3, .col-xs-6{
+    padding: 0px;
 }
 .imageactive, .filterimageactive{
     border:2px solid #FC6703;
