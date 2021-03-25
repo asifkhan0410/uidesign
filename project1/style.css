@@ -230,15 +230,17 @@ span.iconify{
     flex-wrap: wrap;
     cursor: pointer;
     margin: -7px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.popularlistings>img , .searchlistings>img{
-    /* width: 16%; */
-    padding: 10px;
-}
 .col-lg-2, .col-md-2, .col-sm-3, .col-xs-6{
     padding: 0px;
+    float: none;
+}
+.popularlistings>img , .searchlistings>img{
+    width: 16%;
+    padding: 1px;
+    margin:4px;
 }
 .imageactive, .filterimageactive{
     border:2px solid #FC6703;
@@ -252,6 +254,7 @@ span.iconify{
 .filter{
     display: flex;
     height: 24px;
+    border: 1px solid #707070;
     align-items: center;
     background-color: #F9F5F5;
     border-radius: 15px 5px 5px 15px;
@@ -404,14 +407,14 @@ span.iconify{
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
-    height: 285px;   
+    height: 279px;   
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
 }
 .imagesectiontop > img{
     width: 15px;
-    padding: 10px;
+    margin-left: 5px;
 }
 .imagesectionbottom{
     display: flex;
@@ -1242,7 +1245,7 @@ span.iconify{
         margin: 10px 0px;
     }
     .fullsearchbottom>input{
-        margin: 5px 8px;
+        margin: 3px 8px 2px;
     }
     .searchresultsoptions__left{
         min-height: 350px;
@@ -1255,7 +1258,7 @@ span.iconify{
         margin-top: -4%;
     }
     .imagesection{
-        background-size: cover;
+        height: 382px;
     }
     .imagesectionbottom{
         justify-content: flex-end;
@@ -1311,5 +1314,24 @@ span.iconify{
         background-color: #64B3E8;
         color: white;
         border: none;
+    }
+}
+
+@media only screen and (min-width:2500px){
+    .imagesection{
+        height:590px;
+    }
+    .togglesearchbefore{
+        margin-top: -3%;
+    }
+    .savedresults.search-active::after {
+        width: 120px;
+        margin: 25px -104px;
+    }
+    .searchresults.search-active::after{
+        margin: 23px -106px;
+    }
+    .popularlistings>img, .searchlistings>img {
+        margin: 9px;
     }
 }
