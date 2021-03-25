@@ -7,8 +7,8 @@ const fitlerActive = document.querySelectorAll('.filteractive');
 const popularListings = document.querySelector('.popularlistings');
 const filteredListings = document.querySelector('.filtered');
 const SearchHeader = document.querySelector('.searcheader')
-const imagesListing1 = popularListings.querySelectorAll('img');
-const imagesListing2 = filteredListings.querySelectorAll('img');
+const imagesListing1 = popularListings.querySelectorAll('.singleimage img');
+const imagesListing2 = filteredListings.querySelectorAll('.singleimage img');
 const signInButton = document.querySelector('.loginsignup');
 const signUpBox = document.querySelector('.signupdialogbox');
 const passwordBox = document.querySelector('.forgetpassword');
@@ -25,7 +25,7 @@ const ImageExpandClose = document.querySelector('.imagexpandtop');
 const searchListing = document.querySelector('.searchlistings');
 console.log(Navbar.offsetWidth);
 
-const searchListingImages = document.querySelectorAll('.searchlistings img');
+const searchListingImages = searchListing.querySelectorAll('.singleimage');
 const OpenSearch = document.querySelector('.searchresultsoptions__rightcardsearch');
 const OpenSearchBox = document.querySelector('.searchresultsoptions__rightcard.selectopensearch');
 const CloseOpenSearchBox = document.querySelector('.fullsearchtopafter');
