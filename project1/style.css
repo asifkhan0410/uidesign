@@ -6,6 +6,71 @@ body{
     font-family:'Segoe UI', sans-serif;
     margin: 0px;
 }
+
+/* Loader */
+.preloader.pl-xxl {
+    width: 200px;
+}
+.preloader {
+    position: relative;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.preloader:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.pl-circular {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    height: 100%;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.preloader.pls-primary .plc-path {
+    stroke: #64B3E8;
+}
+.preloader[class*=pls-] .plc-path {
+    -webkit-animation: dash 1.5s ease-in-out infinite;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+.plc-path {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    fill: none;
+}
+
+@-webkit-keyframes rotate{
+    0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}
+}
+
+@keyframes rotate{
+    0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+@-webkit-keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35px}100%{stroke-dasharray:89,200;stroke-dashoffset:-124px}}
+
+@keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35px}100%{stroke-dasharray:89,200;stroke-dashoffset:-124px}}
+
+
+
 .main{
     display: flex;
     flex-direction: column;
@@ -250,7 +315,7 @@ span.iconify{
 .singleimage__thumbnail{
     position: relative;
     margin-top: -25%;
-    margin-left: 1px;
+    margin-left: 0px;
 }
 .thumbnail__percent{
     font-size: 9px;
@@ -297,12 +362,12 @@ span.iconify{
     font-size: 12px;
 }
 .filter>h3>span{
-    height: 22px;
-    width: 22px;
+    height: 24px;
+    width: 24px;
     border-radius: 50%;
     background-color: #F9F5F5;
     border: 1px solid #707070;
-    margin: -4px -27px;
+    margin: -6px -27px;
     position: absolute;
 }
 .trademark{
@@ -1002,8 +1067,22 @@ span.iconify{
         margin: 0 0 10px;
         font-size: 10px;
     }
-    .popularlistings>img, .searchlistings>img {
+    .singleimage {
         width: 47%;
+    }
+    .singleimage__thumbnail{
+        margin-top: -29%;
+    }
+    .thumbnail__percent{
+        font-size: 8px;
+        padding: 3px 8px;
+    }
+    .thumbnail__price{
+        font-size: 10px;
+    }
+    .thumbnail__address{
+        margin-bottom: 5px;
+        font-size: 7px;
     }
     .filters{
         flex-wrap: wrap;

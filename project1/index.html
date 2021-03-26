@@ -10,8 +10,13 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
-<body>
-    <div class=" container-fluid main">
+<body onload="myFunction()">
+    <div  id="loader" class="preloader pl-xxl pls-primary">
+        <svg class="pl-circular" viewBox="25 25 50 50">
+            <circle class="plc-path" cx="50" cy="50" r="20"></circle>
+        </svg>
+    </div>
+    <div style="display:none;" id="myDiv" class="container-fluid main">
         <div class="row navigation">
             <ul class="navigation__list col-lg-10 col-md-10 col-sm-10 col-xs-10 nav nav-tabs">
             <li class="navigation__listitem active">
@@ -1444,5 +1449,17 @@
     </div>
   
 <script src="script.js"></script>
+<script>
+    var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 1000);
+    }
+    
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+    </script>
 </body>
 </html>
