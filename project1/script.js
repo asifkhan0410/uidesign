@@ -47,9 +47,14 @@ const SearchOptions = document.querySelectorAll('.searchoptions button');
 const fullSearchBottom = document.querySelector('.fullsearchbottom');
 const Pencil= document.querySelector('.fullsearchbottom .pencil');
 
+const filtersList = document.querySelector('.filters');
+const filtersLeftBtn = document.querySelector('.filtersleft');
+const filtersRightBtn = document.querySelector('.filterright');
+
 const selectFiles= document.querySelectorAll('.body button');
 const selectFilesBody= document.querySelector('.select__files');
 const Search = document.querySelector('.search')
+
 
 let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=true;
 
@@ -80,7 +85,15 @@ function fixNav() {
         //console.log(this.classList)
         if(this.classList[1]==='item4'||this.classList[1]==='item5'){
             Body.style.backgroundColor = 'white';
-            Body.style.border='none'
+            Body.style.border='none';
+            if(window.screen.width<415){
+                filtersLeftBtn.style.display="none";
+                filtersRightBtn.style.display="none";
+            }else{
+                filtersList.scrollBy(`-${filtersList.offsetWidth}`,0); 
+                filtersLeftBtn.style.display="none";
+                filtersRightBtn.style.display="flex";
+            }
         }else{
             Body.style.background = 'rgb(239 235 235 / 30%) 0% 0% no-repeat padding-box';
             Body.style.border='2px dashed rgb(1 35 69 / 30%)'
@@ -263,6 +276,18 @@ toggleOpenSearch.addEventListener('click', ()=>{
 
 Pencil.addEventListener('click', pencilToggle);
 
+filtersRightBtn.addEventListener('click',()=>{
+    filtersList.scrollBy(`${filtersList.offsetWidth}`,0); 
+    filtersLeftBtn.style.display='flex';
+    filtersRightBtn.style.display='none';
+});
+
+filtersLeftBtn.addEventListener('click',()=>{
+    filtersList.scrollBy(`-${filtersList.offsetWidth}`,0);
+    filtersLeftBtn.style.display='none';
+    filtersRightBtn.style.display='flex';
+});
+
 selectFiles.forEach(sf => sf.addEventListener('click', ()=>{
     Body.style.display ='none'
     selectFilesBody.style.display='flex';
@@ -287,3 +312,5 @@ CloseOpenSearchBox.addEventListener('click', ()=>{
 })
 
 a.forEach(aa=> aa.addEventListener('click',addSearch));
+
+
