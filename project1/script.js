@@ -23,7 +23,6 @@ const ImageExpand =document.querySelector('.imagexpand');
 const ImageExpandClose = document.querySelector('.imagexpandtop');
 
 const searchListing = document.querySelector('.searchlistings');
-console.log(Navbar.offsetWidth);
 
 const searchListingImages = searchListing.querySelectorAll('.singleimage');
 const OpenSearch = document.querySelector('.searchresultsoptions__rightcardsearch');
