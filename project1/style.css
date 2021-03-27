@@ -512,7 +512,7 @@ span.iconify{
 /* Expand Box */
 .searchlistingscontainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .expansion{
     display: none;
