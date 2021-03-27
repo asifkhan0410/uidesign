@@ -139,13 +139,13 @@ function fixNav() {
             this.classList.add('searchimageactive');
             searchListing.style.width=`${window.screen.width>415?"66.8%":"50%"}`;
             searchListing.style.marginRight='4px'
-            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"100%"}`);
+            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"16%":"100%"}`);
             ExpandBox.style.display='flex';            
         }else{
             ExpandBox.style.display='flex';
             searchListing.style.width=`${window.screen.width>415?"66.8%":"50%"}`;
             searchListing.style.marginRight='4px'
-            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"100%"}`);
+            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"16%":"100%"}`);
             this.classList.add('searchimageactive');
             searchimageactive.classList.remove('searchimageactive');
         }
