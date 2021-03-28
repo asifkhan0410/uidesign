@@ -298,7 +298,7 @@ span.iconify{
     flex-wrap: wrap;
     cursor: pointer;
     margin: -5px;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .col-lg-2, .col-md-2, .col-sm-3, .col-xs-6{
@@ -313,12 +313,13 @@ span.iconify{
     display: flex;
     flex-direction: column;
     width: 16%;
-    margin: 4px;
+    margin: 3px;
 }
 .singleimage__thumbnail{
     position: relative;
     margin-top: -25%;
     margin-left: 0px;
+    margin-bottom: 4px;
 }
 .thumbnail__percent{
     font-size: 9px;
