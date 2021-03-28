@@ -320,5 +320,6 @@ seeListings.addEventListener('click', ()=>{
     savedResultbutton.classList.add('search-active');
     SearchResultsOption.style.display='none';
     SavedResultsOption.style.display='flex';
+    toggleOpenSearch.style.display = 'none';
 })
 
