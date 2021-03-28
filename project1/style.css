@@ -14,7 +14,7 @@ body{
 .preloader {
     position: relative;
     margin: 0 auto;
-    height: 100vh;
+    height: 98vh;
     display: flex;
     justify-content: center;
 }
