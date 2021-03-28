@@ -550,9 +550,11 @@ span.iconify{
 }
 .imagesectionbottom1{
     margin: 0px 21px 0px 125px;
+    cursor: pointer;
     color: white;
 }
 .imagesectionbottom2{
+    cursor: pointer;
     margin-right: 5px;
 }
 .imagesectionbottom3{
@@ -630,11 +632,13 @@ span.iconify{
     font-weight: 400;
 }
 .estateoptions>img{
+    cursor: pointer;
     padding: 20px 30px;
 }
 .expansion>h1{
     text-align: center;
     font-size: 22px;
+    cursor: pointer;
     margin: 0px;
     color: #64B3E8;
     padding: 12px 0px;
@@ -841,6 +845,7 @@ span.iconify{
     height: 74px;
     width: 74px;
     border-radius: 50%;
+    cursor: pointer;
     border: 1px solid #707070;
     background-image: url(./images/mypic.png);
     background-size: contain;
@@ -930,6 +935,7 @@ span.iconify{
 }
 .fullsearchbottom>img{
     padding: 0px 6px;
+    cursor: pointer;
 }
 
 .searchresultsoptions__rightcard>h4{

@@ -52,7 +52,10 @@ const filtersRightBtn = document.querySelector('.filterright');
 
 const selectFiles= document.querySelectorAll('.body button');
 const selectFilesBody= document.querySelector('.select__files');
-const Search = document.querySelector('.search')
+const Search = document.querySelector('.search');
+const savedResultbutton = document.querySelector('.savedresults');
+const searchResultbutton = document.querySelector('.searchresults');
+const seeListings = document.querySelector('#seelistingdetails');
 
 
 let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=true;
@@ -312,4 +315,10 @@ CloseOpenSearchBox.addEventListener('click', ()=>{
 
 a.forEach(aa=> aa.addEventListener('click',addSearch));
 
+seeListings.addEventListener('click', ()=>{
+    searchResultbutton.classList.remove('search-active')
+    savedResultbutton.classList.add('search-active');
+    SearchResultsOption.style.display='none';
+    SavedResultsOption.style.display='flex';
+})
 
