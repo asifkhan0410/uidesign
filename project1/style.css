@@ -734,7 +734,7 @@ span.iconify{
     border: 1px solid rgb(112 112 112 / 30%);
     border-radius: 4px;
 }
-.searchresults, .savedresults{
+.searchresults, .savedresults,.savedsearch{
     border: none;
     padding: 11px;
     width:120px;
@@ -817,6 +817,8 @@ span.iconify{
     display: flex;
     flex: 0.54;
     overflow-x: scroll;
+    align-items: center;
+    justify-content: center;
     padding-left: 5px;
 }
 .togglesearchbefore{
@@ -868,6 +870,7 @@ span.iconify{
 .fullsearchtop{
     display: flex;
     align-items: center;
+    background-color: white;
     padding: 2px;
 }
 .fullsearchtopafter{
