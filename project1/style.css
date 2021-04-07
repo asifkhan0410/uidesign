@@ -815,7 +815,7 @@ span.iconify{
 }
 .searchresultsoptions__right{
     display: flex;
-    flex: 0.54;
+    /* flex: 0.54; */
     overflow-x: scroll;
     align-items: center;
     justify-content: center;
@@ -895,6 +895,8 @@ span.iconify{
 }
 .fullsearchtopinfoheader{
     display: flex;
+    margin-right: 20px;
+    position: relative;
     justify-content: space-between;
     align-items: center;
 }
@@ -916,21 +918,92 @@ span.iconify{
     font-size: 10px;
     color: #707070;
 }
-.fullsearchbottom{
+.fullsearchtopinfoheader__dropdown{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+}
+.dropdown__content{
+    display: flex;
+    background-color: white;
+    border: 1px solid #00000029;
+    flex-wrap: wrap;
+    width: 50%;
+    top: 120%;
+    right: 0;
+    position: absolute;
+    box-shadow: 0px 3px 12px #00000029;
+    border-radius: 4px;
+}
+.dropdown__content>h1{
+    font-size: 9px;
+    display: flex;
+    color: #64b3e8;
+    margin: 0;
+    padding: 12px 0px;
+    border: 1px solid #00000029;
+    align-items: center;
+    width: 50%;
+    cursor: pointer;
+    flex-direction: column;
+}
+.dropdown__content>h1>img{
+    width: 20px;
+    margin-bottom: 3px;
+}
+.fullsearchtopinfoheader__dropdown>p{
+    height: 5px;
+    border-radius: 50%;
+    width: 5px;
+    margin: 1px;
+    background-color: #64b3e8;
+}
+.fullsearchbottom,.fullsearchbottom2{
+    display: flex;
+    /* justify-content: space-evenly; */
     background-color: #F9F5F578;
     border-top: 1px solid #C5C3BC;
 }
+
 .fullsearchbottom>h4{
     margin: 0;
     font-size: 11px;
     color: #012D5A;
     padding: 4px 125px 4px 20px;
 }
+.fullsearchbottom2>h1,.fullsearchbottom2>h2{
+    margin: 0;
+    font-size: 15px;
+    color: #012345;
+    padding: 13px 30px;
+}
+.fullsearchbottom2>h2{
+    color: #64B3E8;
+}
+.fullsearchbottom2 .maps{
+    padding: 0px 30px;
+    border-right: 1px solid #C5C3BC;
+    border-left: 1px solid #C5C3BC;
+}
+.fullsearchbottom2 .saveoption{
+    padding: 0px 30px;
+    border-right: 1px solid #C5C3BC;
+}
+.fullsearchbottom>h1{
+    background-color: #64B3E8;
+    margin: 0px;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex: 0.3;
+    font-size: 15px;
+    color: white;
+    border: 1px solid #F9F5F578;
+    padding: 12px;
+}
 .fullsearchbottom>input{
-    flex: 0.9;
-    margin: 4px 8px;
+    flex: 0.7;
+    margin: 8px;
     outline: none;
     background-color: #F9F5F578;
     font-size: 10px;
@@ -938,7 +1011,7 @@ span.iconify{
     border-bottom: 1px solid #C5C3BC;
 }
 .fullsearchbottom>img{
-    padding: 0px 6px;
+    padding: 12px;
     cursor: pointer;
 }
 
