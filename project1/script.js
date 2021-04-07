@@ -44,6 +44,7 @@ const toggleOpenSearch = document.querySelector('.opensearchresults');
 
 const SearchOptions = document.querySelectorAll('.searchoptions button');
 const fullSearchBottom = document.querySelector('.fullsearchbottom');
+const fullSearchBottom2 = document.querySelector('.fullsearchbottom2');
 const Pencil= document.querySelector('.fullsearchbottom .pencil');
 
 const filtersList = document.querySelector('.filters');
@@ -188,14 +189,8 @@ function fixNav() {
     }
 
     function pencilToggle(){
-        console.log(Pencil)
-
-        if(!penciltoggle){
-            fullSearchBottom.innerHTML = '<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/save-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>';
-        }else {
-            fullSearchBottom.innerHTML='<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><h4>Marry Turner</h4><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
-        }    
-        penciltoggle=!penciltoggle;
+        fullSearchBottom.style.display='none';
+        fullSearchBottom2.style.display = 'flex';
     }
     let lastactivesearch,parent,parent2;
 
