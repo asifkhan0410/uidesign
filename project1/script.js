@@ -25,7 +25,7 @@ const ImageExpandClose = document.querySelector('.imagexpandtop');
 const searchListing = document.querySelector('.searchlistings');
 
 const searchListingImages = searchListing.querySelectorAll('.singleimage');
-const OpenSearch = document.querySelector('.searchresultsoptions__rightcardsearch');
+const OpenSearch = document.querySelector('.searchresultsoptions__rightcard');
 const OpenSearchBox = document.querySelector('.searchresultsoptions__rightcard.selectopensearch');
 const CloseOpenSearchBox = document.querySelector('.fullsearchtopafter');
 
@@ -35,14 +35,21 @@ const SearchResultsOptionRight = document.querySelectorAll('.searchresultsoption
 const SearchResultsOption = document.querySelector('.searchresultoptions');
 const SearchOptionsContainer = document.querySelector('.searchoptionscontainer');
 const SavedResultsOption = document.querySelector('.savedresultoptions');
+const SavedSearchOption = document.querySelector('.savedsearchoptions');
 
-const SearchResultsOptionRightCard = document.querySelectorAll('.searchresultsoptions__rightcard');
+//const SearchResultsOptionRightCard = document.querySelectorAll('.searchresultsoptions__rightcard');
 const SearchResultsOptionRightToggle = document.querySelector('.togglesearchbefore');
 
 const toggleCloseSearch = document.querySelector('.closesearchresults');
 const toggleOpenSearch = document.querySelector('.opensearchresults');
 
 const SearchOptions = document.querySelectorAll('.searchoptions button');
+const dropdown1 = document.querySelector('.fullsearchtopinfoheader__dropdown');
+const dropdownContent = document.querySelector('.dropdown__content');
+const dropdown1ContentC1 = document.querySelector('.dropdown__content .c1');
+const dropdown1ContentC2 = document.querySelector('.dropdown__content .c2');
+const dropdown1ContentC3 = document.querySelector('.dropdown__content .c3');
+const dropdown1ContentC4 = document.querySelector('.dropdown__content .c4');
 const fullSearchBottom = document.querySelector('.fullsearchbottom');
 const fullSearchBottom2 = document.querySelector('.fullsearchbottom2');
 const Pencil= document.querySelector('.fullsearchbottom .pencil');
@@ -59,7 +66,7 @@ const searchResultbutton = document.querySelector('.searchresults');
 const seeListings = document.querySelector('#seelistingdetails');
 
 
-let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=true;
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=false;
 
 function fixNav() {
     if (window.scrollY >= 20) {
@@ -181,11 +188,19 @@ function fixNav() {
         if(this.classList[0]==='searchresults') {
             SearchResultsOption.style.display='flex';
             SavedResultsOption.style.display='none';
+            SavedSearchOption.style.display ='none';
         }
-        else {SearchResultsOption.style.display='none';
-        toggleOpenSearch.style.display='none';
-        SavedResultsOption.style.display='flex';        
-    }
+        else if(this.classList[0]==='savedresults') {
+            SearchResultsOption.style.display='none';
+            toggleOpenSearch.style.display='none';
+            SavedSearchOption.style.display='none';
+            SavedResultsOption.style.display='flex';        
+        }
+        else {
+            SearchResultsOption.style.display='none';
+            SavedResultsOption.style.display='none';
+            SavedSearchOption.style.display ='flex';
+        }
     }
 
     function pencilToggle(){
@@ -212,6 +227,15 @@ function fixNav() {
             this.classList.add('active');
             lastactivesearch.classList.remove('active');
         }  
+    }
+
+    function toggleDropdown(){
+    penciltoggle=!penciltoggle;
+    if(penciltoggle===false){
+        dropdownContent.style.display='none';
+    }else if(penciltoggle===true){
+        dropdownContent.style.display='flex';
+    }
     }
 
 
@@ -291,22 +315,29 @@ selectFiles.forEach(sf => sf.addEventListener('click', ()=>{
 }))
 selectFilesBody.addEventListener('click', ()=>{
     Search.style.display="flex";
+    OpenSearch.style.display='none'
+    OpenSearchBox.style.display='flex'
+    dropdownContent.style.display='none'
+    penciltoggle=false;
     selectFilesBody.style.display = 'none'
 });
 
 window.addEventListener('scroll', fixNav);
 OpenSearch.addEventListener('click', ()=>{
-    parent = OpenSearch.parentNode;
-    parent2= parent.parentNode;
-    //console.log(parent.parentNode);
-    parent.style.display = "none";
-    parent2.insertBefore(OpenSearchBox, parent.nextSibling)
-    OpenSearchBox.style.display="flex";
+    // parent = OpenSearch.parentNode;
+    // parent2= parent.parentNode;
+    // //console.log(parent.parentNode);
+    // parent.style.display = "none";
+    // parent2.insertBefore(OpenSearchBox, parent.nextSibling)
+    // OpenSearchBox.style.display="flex";
+        Search.style.display='none';
+        Body.style.display='flex';
+        selectFilesBody.style.display='none'
 })
-CloseOpenSearchBox.addEventListener('click', ()=>{
-    OpenSearchBox.style.display='none';
-    parent.style.display="flex";
-})
+// CloseOpenSearchBox.addEventListener('click', ()=>{
+//     OpenSearchBox.style.display='none';
+//     parent.style.display="flex";
+// })
 
 a.forEach(aa=> aa.addEventListener('click',addSearch));
 
@@ -316,5 +347,37 @@ seeListings.addEventListener('click', ()=>{
     SearchResultsOption.style.display='none';
     SavedResultsOption.style.display='flex';
     toggleOpenSearch.style.display = 'none';
+})
+
+dropdown1.addEventListener('click', toggleDropdown);
+dropdown1ContentC2.addEventListener('click', ()=>{
+    OpenSearch.style.display='flex';
+    OpenSearchBox.style.display='none';
+    dropdownContent.style.display='none'
+    penciltoggle=false;
+})
+
+dropdown1ContentC1.addEventListener('click', ()=>{
+    fullSearchBottom.style.display='flex';
+    fullSearchBottom2.style.display = 'none';
+    dropdownContent.style.display='none'
+    penciltoggle=false
+})
+
+dropdown1ContentC3.addEventListener('click', ()=>{
+    Search.style.display='none';
+    Body.style.display='flex';
+    selectFilesBody.style.display='none'
+    dropdownContent.style.display='none'
+    penciltoggle=false
+})
+
+dropdown1ContentC4.addEventListener('click', ()=>{
+    searchResultbutton.classList.remove('search-active')
+    savedResultbutton.classList.add('search-active');
+    SearchResultsOption.style.display='none';
+    SavedResultsOption.style.display='flex';
+    dropdownContent.style.display='none'
+    penciltoggle=false
 })
 
