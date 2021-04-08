@@ -740,6 +740,7 @@ span.iconify{
     width:120px;
     margin: 5px;
     outline: none;
+    position: relative;
     border-radius: 2px;
     font-weight: 600;
     background-color:#85BEE4;
@@ -755,6 +756,14 @@ span.iconify{
     height: 28px;
     width: 120px;
     margin: 23px -105px;
+    background-color: inherit;
+}
+.savedsearch.search-active::after{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: inherit;
+    margin: 30px -101.5px;
     background-color: inherit;
 }
 .savedresults.search-active::after{
@@ -981,11 +990,11 @@ span.iconify{
     width: 100%;
     display: flex;
     background-color: #F9F5F5;
-    justify-content: center;
+    justify-content: space-evenly;
     border-top: 1px solid #EFEBEB;
 }
 .savedsearchoptions__cardbuttons>img{
-    padding: 12px 30px;
+    padding: 12px;
     cursor: pointer;
 }
 .fullsearchbottom,.fullsearchbottom2{
