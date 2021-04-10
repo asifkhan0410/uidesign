@@ -25,13 +25,13 @@ const ImageExpandClose = document.querySelector('.imagexpandtop');
 const searchListing = document.querySelector('.searchlistings');
 
 const searchListingImages = searchListing.querySelectorAll('.singleimage');
-const OpenSearch = document.querySelector('.searchresultsoptions__rightcard');
+const OpenSearch = document.querySelector('.searchresultsoptions__rightcard.newsearch');
 const OpenSearchBox = document.querySelector('.searchresultsoptions__rightcard.selectopensearch');
-const CloseOpenSearchBox = document.querySelector('.fullsearchtopafter');
+//const CloseOpenSearchBox = document.querySelector('.fullsearchtopafter');
 
 const a = document.querySelectorAll('.searchresultsoptions__rightcardimg');
 
-const SearchResultsOptionRight = document.querySelectorAll('.searchresultsoptions__right');
+//const SearchResultsOptionRight = document.querySelectorAll('.searchresultsoptions__right');
 const SearchResultsOption = document.querySelector('.searchresultoptions');
 const SearchOptionsContainer = document.querySelector('.searchoptionscontainer');
 const SavedResultsOption = document.querySelector('.savedresultoptions');
@@ -45,7 +45,9 @@ const toggleOpenSearch = document.querySelector('.opensearchresults');
 
 const SearchOptions = document.querySelectorAll('.searchoptions button');
 const dropdown1 = document.querySelector('.fullsearchtopinfoheader__dropdown');
+const dropdown2 = document.querySelectorAll('.savedsearchoptions__carddropdown');
 const dropdownContent = document.querySelector('.dropdown__content');
+//const dropdownContent2 = document.querySelectorAll('.dropdown__content2');
 const dropdown1ContentC1 = document.querySelector('.dropdown__content .c1');
 const dropdown1ContentC2 = document.querySelector('.dropdown__content .c2');
 const dropdown1ContentC3 = document.querySelector('.dropdown__content .c3');
@@ -66,7 +68,8 @@ const searchResultbutton = document.querySelector('.searchresults');
 const seeListings = document.querySelector('#seelistingdetails');
 
 
-let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=false;
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=false,
+penciltoggle2;
 
 function fixNav() {
     if (window.scrollY >= 20) {
@@ -238,6 +241,25 @@ function fixNav() {
     }
     }
 
+    function toggleDropdown2(){
+        penciltoggle2 = document.querySelector('.savedsearchoptions__carddropdown.ddactive');
+        console.log(penciltoggle2,this)
+        if(!penciltoggle2){
+            this.classList.add('ddactive');
+            this.querySelector('.dropdown__content2').style.display='flex';
+        }else if(penciltoggle2===this){
+            this.classList.remove('ddactive');
+            this.querySelector('.dropdown__content2').style.display='none';
+        }else{
+            this.classList.add('ddactive');
+            this.querySelector('.dropdown__content2').style.display='flex';
+            //dropdownContent2.style.display='flex'
+            penciltoggle2.classList.remove('ddactive');
+            penciltoggle2.querySelector('.dropdown__content2').style.display='none';
+
+        }
+    }
+
 
 navbarList.forEach(nl => nl.addEventListener('click', toggleTab));
 fitlerActive.forEach(fa => fa.addEventListener('click', toggleClick));
@@ -324,20 +346,10 @@ selectFilesBody.addEventListener('click', ()=>{
 
 window.addEventListener('scroll', fixNav);
 OpenSearch.addEventListener('click', ()=>{
-    // parent = OpenSearch.parentNode;
-    // parent2= parent.parentNode;
-    // //console.log(parent.parentNode);
-    // parent.style.display = "none";
-    // parent2.insertBefore(OpenSearchBox, parent.nextSibling)
-    // OpenSearchBox.style.display="flex";
         Search.style.display='none';
         Body.style.display='flex';
         selectFilesBody.style.display='none'
 })
-// CloseOpenSearchBox.addEventListener('click', ()=>{
-//     OpenSearchBox.style.display='none';
-//     parent.style.display="flex";
-// })
 
 a.forEach(aa=> aa.addEventListener('click',addSearch));
 
@@ -350,6 +362,7 @@ seeListings.addEventListener('click', ()=>{
 })
 
 dropdown1.addEventListener('click', toggleDropdown);
+dropdown2.forEach(cd => cd.addEventListener('click', toggleDropdown2));
 dropdown1ContentC2.addEventListener('click', ()=>{
     OpenSearch.style.display='flex';
     OpenSearchBox.style.display='none';
