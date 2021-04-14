@@ -9,6 +9,13 @@ const filteredListings = document.querySelector('.filtered');
 const SearchHeader = document.querySelector('.searcheader')
 const imagesListing1 = popularListings.querySelectorAll('.singleimage img');
 const imagesListing2 = filteredListings.querySelectorAll('.singleimage img');
+const SearchButton = document.querySelector('.search-btn');
+const CloseButton = document.querySelector('.close-btn');
+const SearchOpen = document.querySelector('.open-search-cross');
+const NavRight = document.querySelector('.nav-right');
+const NavLeft = document.querySelector('.navigation__list');
+const OptionNavbrButton = document.querySelector('.option-btn');
+const Dropdown3 = document.querySelector('.dropdown__content3');
 const signInButton = document.querySelector('.loginsignup');
 const signUpBox = document.querySelector('.signupdialogbox');
 const passwordBox = document.querySelector('.forgetpassword');
@@ -60,6 +67,10 @@ const filtersList = document.querySelector('.filters');
 const filtersLeftBtn = document.querySelector('.filtersleft');
 const filtersRightBtn = document.querySelector('.filterright');
 
+const SavedSearchList = document.querySelector('.savedsearchoptions');
+const SavedSearchLeftBtn = document.querySelector('.ssfiltersleft');
+const SavedSearchRightBtn = document.querySelector('.ssfilterright');
+
 const selectFiles= document.querySelectorAll('.body button');
 const selectFilesBody= document.querySelector('.select__files');
 const Search = document.querySelector('.search');
@@ -68,7 +79,7 @@ const searchResultbutton = document.querySelector('.searchresults');
 const seeListings = document.querySelector('#seelistingdetails');
 
 
-let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=false,
+let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=false,penciltoggle3=false,
 penciltoggle2;
 
 function fixNav() {
@@ -91,12 +102,14 @@ function fixNav() {
         activepanel= document.querySelector('.navigation__listitem.active');
         //activebody= document.querySelector('.body.active');
         //currentactivebody = document.querySelector(`.body.${this.classList[1]}`);
+        penciltoggle3=false;
+        Dropdown3.style.display='none';
         Search.style.display='none';
         Body.style.display='flex';
         selectFilesBody.style.display='none'
         //currentactivebody.classList.add('activebody');
         //console.log(this.classList)
-        if(this.classList[1]==='item4'||this.classList[1]==='item5'){
+        if(this.classList[1]==='item5'){
             Body.style.backgroundColor = 'white';
             Body.style.border='none';
             if(window.screen.width<415){
@@ -148,7 +161,7 @@ function fixNav() {
 
     function toggleExpand(){
         searchimageactive = document.querySelector('.searchimageactive');
-        fullSearchBottom.innerHTML = '<img src="./images/stop-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
+        // fullSearchBottom.innerHTML = '<img src="./images/stop-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
         if(!searchimageactive || searchimageactive===this){
             this.classList.add('searchimageactive');
             searchListing.style.width=`${window.screen.width>415?"66.8%":"50%"}`;
@@ -201,6 +214,7 @@ function fixNav() {
         }
         else {
             SearchResultsOption.style.display='none';
+            toggleOpenSearch.style.display='none';
             SavedResultsOption.style.display='none';
             SavedSearchOption.style.display ='flex';
         }
@@ -293,7 +307,7 @@ ExpandBoxCloseButton.addEventListener('click', ()=>{
     searchListing.style.marginRight='0px'
     searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"16%":"47%"}`);
     searchimageactive.classList.remove('searchimageactive');
-    fullSearchBottom.innerHTML = '<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/save-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>';
+    // fullSearchBottom.innerHTML = '<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/save-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>';
 });
 
 ExpandBoxExpandButton.addEventListener('click',()=>{
@@ -329,6 +343,21 @@ filtersLeftBtn.addEventListener('click',()=>{
     filtersList.scrollBy(`-${filtersList.offsetWidth}`,0);
     filtersLeftBtn.style.display='none';
     filtersRightBtn.style.display='flex';
+});
+
+SavedSearchRightBtn.addEventListener('click',(e)=>{
+    SavedSearchList.scrollBy(`${SavedSearchList.offsetWidth}`,0); 
+    SavedSearchLeftBtn.style.display='flex';
+    console.log(e)
+    // SavedSearchLeftBtn.style.left = `${SavedSearchList.offsetWidth/2}px`
+    SavedSearchRightBtn.style.display='none';
+});
+
+SavedSearchLeftBtn.addEventListener('click',(e)=>{
+    SavedSearchList.scrollBy(`-${SavedSearchList.offsetWidth}`,0);
+    SavedSearchLeftBtn.style.display='none';
+    console.log(e);
+    SavedSearchRightBtn.style.display='flex';
 });
 
 selectFiles.forEach(sf => sf.addEventListener('click', ()=>{
@@ -392,5 +421,28 @@ dropdown1ContentC4.addEventListener('click', ()=>{
     SavedResultsOption.style.display='flex';
     dropdownContent.style.display='none'
     penciltoggle=false
+})
+
+SearchButton.addEventListener('click', ()=>{
+    NavRight.style.display='none';
+    NavLeft.style.display='none';
+    SearchOpen.style.display='flex';
+    penciltoggle3=false;
+    Dropdown3.style.display='none';
+})
+
+CloseButton.addEventListener('click', ()=>{
+    NavRight.style.display='flex';
+    NavLeft.style.display='flex';
+    SearchOpen.style.display='none';
+})
+
+OptionNavbrButton.addEventListener('click', ()=>{
+    penciltoggle3=!penciltoggle3;
+    if(penciltoggle3===false){
+        Dropdown3.style.display='none';
+    }else if(penciltoggle3===true){
+        Dropdown3.style.display='flex';
+    }
 })
 

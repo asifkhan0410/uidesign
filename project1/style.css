@@ -138,15 +138,41 @@ span.iconify{
     color: #707070;
     opacity: 1;
 }
+.nav-right{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-right>img{
+    cursor: pointer;
+}
+.open-search-cross{
+    display: none;
+    width: 100%;
+    padding: 12px;
+    justify-content: space-between;
+}
+.open-search-cross>input{
+    border: none;
+    outline: none;
+    margin: 10px;
+    background-color: inherit;
+    font-weight: 600;
+}
+.close-btn{
+    cursor: pointer;
+}
 .loginsignup{
     display: flex;
     flex: 0.05;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
 }
 .navigation__body{
     margin: 15px 70px 0px;
-    min-height: 300px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,10 +183,12 @@ span.iconify{
 }
 .select__files{
     display: flex;
+    max-width: 35%;
+    height: 400px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 40px 25%;
+    margin: 40px auto;
     padding: 63px;
 }
 .select__filestopleft,.select__filestopright{
@@ -248,6 +276,7 @@ span.iconify{
 }
 #archistyle{
     width: 100%;
+    margin-top: 77rem;
 }
 
 #myfiles >button, #facebook >button, .featuresearch>button{
@@ -355,7 +384,7 @@ span.iconify{
 .filters::-webkit-scrollbar {
     display: none;
 }  
-.filtersleft, .filterright{
+.filtersleft, .filterright,.ssfiltersleft,.ssfilterright{
     position: absolute;
     background-color: #64B3E8;
     width: 25px;
@@ -366,9 +395,23 @@ span.iconify{
     border-radius: 0px 30px 30px 0px;
     margin-top: -7px;
 }
-.filterright{
+.filterright,.ssfilterright{
     border-radius: 30px 0px 0px 30px;
     right: 85px;
+}
+.ssfiltersleft{
+    display: none;
+    left:83%;
+    top:50%;
+    width: 40px;
+    height: 60px;
+}
+
+.ssfilterright{
+    right: 0;
+    top:50%;
+    width: 40px;
+    height: 60px;
 }
 
 .filter{
@@ -722,9 +765,10 @@ span.iconify{
 .searchresultoptions{
     display: flex;
     width:100%;
+    height: 400px;
     align-self: flex-start;
     margin-left: 0px;
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
 .searchoptions{
     display: flex;
@@ -733,6 +777,14 @@ span.iconify{
     padding: 5px 0px 5px 5px;
     border: 1px solid rgb(112 112 112 / 30%);
     border-radius: 4px;
+}
+.searchoptions>p{
+    margin: 0;
+    align-self: center;
+    margin-left: 40%;
+    cursor:pointer;
+    font-weight: 600;
+    color: white;
 }
 .searchresults, .savedresults,.savedsearch{
     border: none;
@@ -761,7 +813,7 @@ span.iconify{
 .savedsearch.search-active::after{
     content: '';
     position: absolute;
-    height: 28px;
+    height: 20px;
     width: inherit;
     margin: 30px -101.5px;
     background-color: inherit;
@@ -885,7 +937,7 @@ span.iconify{
     display: flex;
     align-items: center;
     background-color: white;
-    padding: 2px;
+    padding: 20px 2px;
 }
 .fullsearchtopafter{
     content: '';
@@ -937,7 +989,7 @@ span.iconify{
     cursor: pointer;
     flex-direction: column;
 }
-.dropdown__content, .dropdown__content2{
+.dropdown__content, .dropdown__content2,.dropdown__content3{
     display: none;
     background-color: white;
     /* border: 1px solid #00000029; */
@@ -955,7 +1007,12 @@ span.iconify{
     right: auto;
     margin: 32px -11%;
 }
-.dropdown__content>h1,.dropdown__content2>h1{
+.dropdown__content3{
+    width: auto;
+    left:-50%;
+    z-index: 10;
+}
+.dropdown__content>h1,.dropdown__content2>h1, .dropdown__content3>h1{
     font-size: 9px;
     display: flex;
     color: #64b3e8;
@@ -984,6 +1041,7 @@ span.iconify{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     margin: 5px;
     width: 16%;
     box-shadow: 0px 3px 6px #00000029;
@@ -1004,16 +1062,17 @@ span.iconify{
     border-top: 1px solid #EFEBEB;
 }
 .savedsearchoptions__cardbuttons>img{
-    padding: 12px;
+    padding: 12px 23px;
     cursor: pointer;
 }
 .fullsearchbottom,.fullsearchbottom2{
     display: flex;
-    /* justify-content: space-evenly; */
+    justify-content: space-between;
     background-color: #F9F5F578;
     border-top: 1px solid #C5C3BC;
 }
-.fullsearchbottom2{display: none;}
+.fullsearchbottom2{display: none;
+align-items: center;}
 
 .fullsearchbottom>h4{
     margin: 0;
@@ -1025,21 +1084,21 @@ span.iconify{
     margin: 0;
     font-size: 15px;
     color: #012345;
-    padding: 13px 30px;
+    padding: 12px 24px;
 }
 .fullsearchbottom2>h2{
     color: #64B3E8;
 }
 .fullsearchbottom2 .maps{
-    padding: 0px 30px;
+    padding: 12px 40px;
     border-right: 1px solid #C5C3BC;
     border-left: 1px solid #C5C3BC;
 }
 .fullsearchbottom2 .saveoption{
-    padding: 0px 30px;
+    padding: 12px 40px;
     border-right: 1px solid #C5C3BC;
 }
-.fullsearchbottom>h1{
+.savedsearchoptions__cardbuttons>h1{
     background-color: #64B3E8;
     margin: 0px;
     /* text-align: center; */
@@ -1049,11 +1108,12 @@ span.iconify{
     flex: 0.3;
     font-size: 15px;
     color: white;
+    cursor: pointer;
     border: 1px solid #F9F5F578;
-    padding: 12px;
+    padding: 18px;
 }
 .fullsearchbottom>input{
-    flex: 0.7;
+    flex: auto;
     margin: 8px;
     outline: none;
     background-color: #F9F5F578;
@@ -1062,8 +1122,9 @@ span.iconify{
     border-bottom: 1px solid #C5C3BC;
 }
 .fullsearchbottom>img{
-    padding: 12px;
+    padding: 15px 40px;
     cursor: pointer;
+    background-color: #F9F5F578;
 }
 
 .searchresultsoptions__rightcard>h4{
@@ -1071,6 +1132,7 @@ span.iconify{
     background-color: #F9F5F5;
     font-size: 15px;
     padding: 13px 0px;
+    cursor: pointer;
     color: #64B3E8;
     width: 100%;
     margin: 0;
@@ -1080,17 +1142,25 @@ span.iconify{
 /* Saved Results Table */
 .savedsearchoptions{
     display: none;
+    height: 400px;
+    position: relative;
     justify-content: space-between;
-    padding: 40px 10px;
+    padding: 7px 10px;
     overflow-x: scroll;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     background-color: #F9F5F5;
 }
+
+.savedsearchoptions::-webkit-scrollbar{
+    display: none;
+}
+
 .savedresultoptions{
     display: none;
     width: 100%;
+    height: 400px;
     background-color: #f9f5f5;
-    min-height: 350px;
+    /* min-height: 350px; */
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -1197,7 +1267,9 @@ span.iconify{
       background-color: transparent;
       border: none;
   }
-  
+  .navigation__body,.select__files,.searchresultoptions,.savedsearchoptions,.savedresultoptions{
+    height: 300px;
+}
 
 @media screen and (max-width:415px){
     .navigation{
@@ -1289,6 +1361,7 @@ span.iconify{
     .box>img{
         width:48px;
     }
+    .ssfiltersleft,.ssfilterright{display: none;}
     .select__filestoprighttopright {
         flex: 0.3;
     }
@@ -1519,14 +1592,28 @@ span.iconify{
         width: 115px;
         height: 115px;
     }
+    .navigation__body,.select__files,.searchresultoptions,.savedsearchoptions,.savedresultoptions{
+        height: 400px;
+    }
+    .ssfiltersleft{left:39%}
+    .savedsearchoptions{
+        padding: 35px 10px;
+    }
+    .searchoptions>p{margin-left: 50%;}
     .searchresultsoptions__rightcardfullsearch{
         width: 700px;
+    }
+    #archistyle{
+        margin-top: 124rem;
     }
     .fullsearchtop>img{
         height: 115px;
     }
     .fullsearchtopinfo{
         padding: 0px 20px;
+    }
+    .fullsearchbottom2>h1,.fullsearchbottom2>h2{
+        padding:15px 74px ;
     }
     .fullsearchtopinfo>h3, .fullsearchtopinfo>p {
         margin: 10px 0px;
@@ -1550,6 +1637,7 @@ span.iconify{
     .imagesectionbottom{
         justify-content: flex-end;
     }
+    .dropdown__content2{margin: 32px 0px 0 -8%;}
     .estatedetail>h3{
         width: 100%;
     }
@@ -1623,6 +1711,11 @@ span.iconify{
 @media only screen and (min-width:2500px){
     .imagesection{
         height:590px;
+    }
+    .searchoptions>p{margin-left: 60%;}
+    .ssfiltersleft{left:0%}
+    #archistyle{
+        margin-top: 214rem;
     }
     .togglesearchbefore{
         margin-top: -3%;
