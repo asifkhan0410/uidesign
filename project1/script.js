@@ -78,9 +78,13 @@ const savedResultbutton = document.querySelector('.savedresults');
 const searchResultbutton = document.querySelector('.searchresults');
 const seeListings = document.querySelector('#seelistingdetails');
 
+const addMaps = document.querySelector('.maps');
+const addMapsContainer = document.querySelector('.mapscontainer');
+
+var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
 let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=false,penciltoggle3=false,
-penciltoggle2;
+penciltoggle2, togglemaps = false;
 
 function fixNav() {
     if (window.scrollY >= 20) {
@@ -161,19 +165,17 @@ function fixNav() {
 
     function toggleExpand(){
         searchimageactive = document.querySelector('.searchimageactive');
-        // fullSearchBottom.innerHTML = '<img src="./images/stop-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/trash-alt-regular2.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/cloud-download-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/><img src="./images/share-alt-duotone.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>'
-        if(!searchimageactive || searchimageactive===this){
-            this.classList.add('searchimageactive');
-            searchListing.style.width=`${window.screen.width>415?"66.8%":"50%"}`;
-            searchListing.style.marginRight='4px'
-            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"100%"}`);
-            ExpandBox.style.display='flex';            
+        ExpandBox.style.display='flex';
+        this.classList.add('searchimageactive');
+        searchListing.style.marginRight='4px';
+        if(togglemaps){
+            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"48%":"48%"}`);        
+            searchListing.style.width=`${window.screen.width>415?"33%":"100%"}`;
         }else{
-            ExpandBox.style.display='flex';
-            searchListing.style.width=`${window.screen.width>415?"66.8%":"50%"}`;
-            searchListing.style.marginRight='4px'
-            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"100%"}`);
-            this.classList.add('searchimageactive');
+            searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"48%"}`);        
+            searchListing.style.width=`${window.screen.width>415?"66.8%":"100%"}`;
+        }
+        if( searchimageactive!==this){            
             searchimageactive.classList.remove('searchimageactive');
         }
     }
@@ -303,9 +305,14 @@ signUpLink.forEach(sign => sign.addEventListener('click', ()=>{
 searchListingImages.forEach(sil => sil.addEventListener('click', toggleExpand));
 ExpandBoxCloseButton.addEventListener('click', ()=>{
     ExpandBox.style.display="none";
-    searchListing.style.width="100%";
     searchListing.style.marginRight='0px'
-    searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"16%":"47%"}`);
+    if(togglemaps){
+        searchListing.style.width=`${window.screen.width>415?"66.6":"100%"}`;        
+        searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"47%"}`);
+    } else {
+        searchListing.style.width="100%";
+        searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"16%":"47%"}`);
+    }
     searchimageactive.classList.remove('searchimageactive');
     // fullSearchBottom.innerHTML = '<img class="pencil" src="./images/pencil-alt-regular.svg" alt="" style="border-right: 1px solid #C5C3BC;"/><input type="text" placeholder="Type in search label"/><img src="./images/save-regular.svg" alt="" style="border-left: 1px solid #C5C3BC;"/>';
 });
@@ -444,5 +451,24 @@ OptionNavbrButton.addEventListener('click', ()=>{
     }else if(penciltoggle3===true){
         Dropdown3.style.display='flex';
     }
+})
+
+addMaps.addEventListener('click' , () => {
+    togglemaps =! togglemaps;
+    if(togglemaps){
+        searchListing.style.width=`${window.screen.width>415?"33%":"100%"}`;
+        searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"48%":"48%"}`);
+        ExpandBox.style.display='flex'; 
+        addMapsContainer.style.display="flex";
+        addMapsContainer.style.width = `${window.screen.width>415?"33%":"100%"}`;
+        ExpandBox.style.width = `${window.screen.width>415?"33%":"100%"}`;
+    } else {
+        searchListing.style.width=`${window.screen.width>415?"100%":"100%"}`;
+        searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"16%":"48%"}`);
+        addMapsContainer.style.display="none";
+        ExpandBox.style.display='none'; 
+
+    }  
+
 })
 

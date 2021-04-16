@@ -181,6 +181,14 @@ span.iconify{
     border: 2px dashed rgb(1 35 69 / 30%);
     border-radius: 4px;
 }
+.table>tbody>tr>td, .table>tbody>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 4px;
+    background-color: white;
+    border: 3px solid #f9f5f5;
+}
+.table>thead:first-child>tr:first-child>th {
+    border-top: 3px solid #f9f5f5;
+}
 .select__files{
     display: flex;
     max-width: 35%;
@@ -561,7 +569,7 @@ span.iconify{
 .expansion{
     display: none;
     flex-direction: column;
-    transform: translateY(4px);
+    transform: translateY(0px);
     height: fit-content;
     width: 32%;
     z-index: 0;
@@ -693,6 +701,18 @@ span.iconify{
     border: 1px solid #FC6703;
 }
 
+.mapscontainer{
+    display: none;
+    width:33%;
+     height: 400px;
+}
+
+#mapid{
+    height: 400px;
+}
+.leaflet-control, .leaflet-top, .leaflet-bottom {
+    z-index: 0;
+}
 /* Expand Image */
 
 .imagexpand{
@@ -1062,7 +1082,8 @@ span.iconify{
     border-top: 1px solid #EFEBEB;
 }
 .savedsearchoptions__cardbuttons>img{
-    padding: 12px 23px;
+    padding: 11px;
+    width: 40px;
     cursor: pointer;
 }
 .fullsearchbottom,.fullsearchbottom2{
@@ -1076,9 +1097,10 @@ align-items: center;}
 
 .fullsearchbottom>h4{
     margin: 0;
-    font-size: 11px;
-    color: #012D5A;
-    padding: 4px 125px 4px 20px;
+    font-size: 15px;
+    background-color: #64b3e8;
+    color: white;
+    padding: 15px 40px 4px 40px;
 }
 .fullsearchbottom2>h1,.fullsearchbottom2>h2{
     margin: 0;
@@ -1285,6 +1307,7 @@ align-items: center;}
     }
     .navigation__list{
         flex: 0.9;
+        padding-right: 0;
     }
     .navigation__listitem>a>h3{
         font-size: 9px;
@@ -1353,6 +1376,7 @@ align-items: center;}
     .select__files{
         margin: 40px 4%;
         padding: 58px 0px;
+        max-width: 90%;
     }
     .box{
         height: 50px;
@@ -1371,7 +1395,8 @@ align-items: center;}
     .search>h2{
         font-size: 10px;
     }
-    .searchresults, .savedresults {
+    .searchoptions>p {display: none;}
+    .searchresults, .savedresults,.savedsearch {
         width: 100px;
         margin: 0px;
         font-size: 11px;
@@ -1380,6 +1405,7 @@ align-items: center;}
     .searchresults.search-active::after, .savedresults.search-active::after {
         width: 100px;
         margin: 20px -86px;
+        height: 15px;
     }
     .savedresults.search-active::after {
         margin: 20px -84px;
@@ -1425,7 +1451,7 @@ align-items: center;}
         font-size: 7px;
     }
     .searchresultsoptions__rightcardfullsearch {
-        width: 231px;
+        width: 300px;
     }
     .fullsearchtop{
         padding: 2px;
@@ -1437,8 +1463,18 @@ align-items: center;}
     margin-right: -3px;
     }
     .fullsearchtop>img{
-        height: 40px;
+        height: 50px;
         margin: 5px;
+        padding: 8px 24px;
+    }
+    .fullsearchtopinfoheader__dropdown>p, .savedsearchoptions__carddropdown>p {
+        height: 3px;}
+    .dropdown__content>h1, .dropdown__content2>h1, .dropdown__content3>h1 {
+        font-size: 6px;
+        padding: 6px 0px;
+    }
+    .dropdown__content>h1>img, .dropdown__content2>h1>img {
+        width: 11px;
     }
     .fullsearchtopinfoheader>h1 {
         font-size: 8px;
@@ -1456,19 +1492,75 @@ align-items: center;}
     }
     .fullsearchbottom>h4 {
         font-size: 7px;
-        padding: 4px 72px 4px 5px;
+        padding: 12px 30px 4px 30px;
     }
     .fullsearchbottom>img{
-        width: 8px;
+        width: 60px;
+        padding: 9px 24px;
+    }
+    .fullsearchbottom2>h1, .fullsearchbottom2>h2 {
+        font-size: 7px;
+        padding: 4px 30px;
+    }
+    .fullsearchbottom2 .maps, .fullsearchbottom2 .saveoption {
+        padding: 5px 14px;
+        width: 45px;
+    }
+
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+        font-size: 7px;
+        line-height: normal;
+    }
+
+    .savedresultoptions__top::-webkit-scrollbar{
+        display: none;
+    }
+    .savedresultoptions__topsearch{
+        width: fit-content;
+        padding:3px 10px;
+    }
+    .savedsearchoptions__card{
+        width: 48%;
+        height: fit-content;
+        justify-content: unset;
+    }
+    .savedsearchoptions__cardimg {
+        margin: 0px 70px;
+    }
+    .savedsearchoptions__card>h4,.savedsearchoptions__card>p {
+        font-size: 10px;
+    }
+    .savedsearchoptions{
+        align-items: center;
+    }
+    .savedsearch.search-active::after{
+        margin: 23px -83.5px;
+    }
+    .dropdown__content2{
+        margin: 32px -29%;
+    }
+    .searchlistingscontainer{
+        flex-direction: column-reverse;
+    }
+    #mapid {
+        height: 100px;
+        margin-bottom: 20px;
     }
     .expansion{
         top: auto;
         /* margin-top: 107px; */
         right: auto;
+        margin-bottom: 20px;
         width: 50%;
     }
     .imagesection{
-        height: 107px;
+        height: 218px;
+    }
+    .popularlistings, .searchlistings {
+        margin: -2px;
+    }
+    #archistyle {
+        margin-top: 251rem;
     }
     .imagesectiontop > img {
         width: 10px;
