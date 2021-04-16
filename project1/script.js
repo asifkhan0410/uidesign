@@ -307,7 +307,7 @@ ExpandBoxCloseButton.addEventListener('click', ()=>{
     ExpandBox.style.display="none";
     searchListing.style.marginRight='0px'
     if(togglemaps){
-        searchListing.style.width=`${window.screen.width>415?"66.6":"100%"}`;        
+        searchListing.style.width=`${window.screen.width>415?"66%":"100%"}`;        
         searchListingImages.forEach(sli => sli.style.width=`${window.screen.width>415?"24%":"47%"}`);
     } else {
         searchListing.style.width="100%";
