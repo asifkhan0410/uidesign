@@ -87,6 +87,7 @@ let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredi
 penciltoggle2, togglemaps = false;
 
 function fixNav() {
+    console.log(searchListing.offsetHeight,ExpandBox.offsetHeight)
     if (window.scrollY >= 20) {
         Navbar.style.width = `${Navbar.offsetWidth}px`;
         SearchOptionsContainer.style.width = `${Navbar.offsetWidth}px`;
@@ -97,6 +98,16 @@ function fixNav() {
     } else{
       document.body.classList.remove('fixed-nav');
       document.body.style.paddingTop = 0;
+    }
+
+    const h = (searchListing.offsetHeight) -(ExpandBox.offsetHeight) - 87;
+    console.log(h);
+    if(window.scrollY< h && window.scrollY> 87){
+        ExpandBox.style.marginTop = `${window.scrollY+87}px`;
+        addMapsContainer.style.marginTop = `${window.scrollY+87}px`;
+    }else if(window.scrollY< 87) {
+        ExpandBox.style.marginTop = '0px';
+        addMapsContainer.style.marginTop = `0px`;
     }
   }
 
