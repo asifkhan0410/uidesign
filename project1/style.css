@@ -172,7 +172,7 @@ span.iconify{
 }
 .navigation__body{
     margin: 15px 70px 0px;
-    min-height: 400px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -269,12 +269,12 @@ span.iconify{
     border: none;
     border-radius: 4px;
 }
-.body{
+.body , .body1{
     display: none;
     align-items: center;
     flex-direction: column;
 }
-.body.active{
+.body.active , .body1.active{
     display: flex; 
     border-bottom: none;     
 }
@@ -284,7 +284,7 @@ span.iconify{
 }
 #archistyle{
     width: 100%;
-    margin-top: 77rem;
+    margin-top: 85rem;
 }
 
 #myfiles >button, #facebook >button, .featuresearch>button{
@@ -301,6 +301,153 @@ span.iconify{
 .featuresearch>button{
     border: 1px solid #707070; 
 }
+/* featureSearch */
+
+#featuresearch{
+    width: 100%;
+    height: 100%;
+}
+.fs-content{
+    width: 100%;
+    height: 100%;
+}
+.fs-content-1, .fs-content-2{
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fs-nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+.fs-nav>h1{font-size: 14px;
+    margin: 10px 20px;
+    color: darkblue;
+}
+
+.fs-nav>button, .fs-content-2-btn,.a1,.a2,.a3,.a4{
+    height: 100%;
+    background-color: rgb(250 249 249);
+    color: #707070;
+    outline:none;
+    font-weight: 500;
+    margin: 0px 10px;
+    border: none;
+    padding: 0px 30px;
+}
+.myself.active , .helpme.active, .fs-content-2-btn{
+    background-color: #64B3E8;
+    color: white;
+}
+.fs-content-2-btn{
+    height: 30px;
+}
+.fs-cards{
+    display: flex;
+    overflow-x: scroll;
+}
+.fs-cards::-webkit-scrollbar {
+    display: none;
+}  
+.fs-card{
+    background-color: white;
+    margin: 10px;
+    box-shadow: 0px 0px 7px lightgrey;
+}
+.fs-card>img{
+    width: 200px;
+}
+.fs-card-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px;
+}
+.fs-card-info>p{
+    margin: 0;
+    font-weight: 700;
+    color: grey;
+}
+
+.fs-content-header{
+    display: flex;
+    align-items: center;
+}
+.fs-content-header>h5{
+    margin: 20px 50px;
+}
+.fs-content-header>p{
+    margin: 0 20px;
+    font-weight: 600;
+    color: #64b3e8;
+}
+.fs-content-header>span{
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    background-color: #add8e65c;
+    padding: 1px 10px;
+    color: #707070;
+    margin: 0px 5px;
+}
+.fs-content-1-next, .fs-content-2,.fs-content-3,.fs-content-32,.fs-content-33,.fs-content-34{
+    display: none;
+}
+
+.fs-content-31,.fs-content-32,.fs-content-33,.fs-content-34{
+    flex-direction: column;
+    width: 100%;
+}
+.fs-content-1-next>img{
+    width: 100%;
+    height: 259px;
+}
+.fs-content-2-btn{
+    position: absolute;
+    top: 55%;
+}
+.fs-content-2>h4{
+    color: #707070;
+}
+.openss2,.previous-btn, .next-btn{
+    height: min-content;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    background-color: #64B3E8;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 20px;
+}
+
+.previous-btn{
+    min-width: 80px;
+    padding: 5px 10px;
+    top: 55%;
+    left: 46%;
+    background-color: white;
+    color: #707070;
+    border: 1px solid #64b3e8;
+}
+.next-btn{
+    min-width: 80px;
+    padding: 5px 10px;
+    top: 55%;
+    left: 52%;
+}
+.additional-nav{
+    display: none;
+    height: -webkit-fill-available;
+}
+.a1{
+    border: 1px solid #64b3e8;
+}
+
+
 #myfiles>p , #facebook>p, #featuresearch>p{
     margin: 0;
     font-size: 14px;

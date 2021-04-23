@@ -81,10 +81,32 @@ const seeListings = document.querySelector('#seelistingdetails');
 const addMaps = document.querySelector('.maps');
 const addMapsContainer = document.querySelector('.mapscontainer');
 
+const fsSearch1 = document.querySelector('.fs-nav-1');
+const fsSearch2 = document.querySelector('#helpme');
+const fsSearch3 = document.querySelector('#myself');
+const fsSearch4 = document.querySelector('.fs-content-1');
+const fsSearch5 = document.querySelector('.fs-content-1-next');
+const fsSearch6 = document.querySelector('.openss2');
+const fsSearch7 = document.querySelector('.fs-content-2');
+const fsSearch9 = document.querySelector('.fs-content-2-btn');
+const fsSearch8 = document.querySelector('.fs-content-3');
+const nxtBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.previous-btn');
+const b1 = document.querySelector('.fs-content-31');
+const b2 = document.querySelector('.fs-content-32');
+const b3 = document.querySelector('.fs-content-33');
+const b4 = document.querySelector('.fs-content-34');
+const a1 = document.querySelector('.a1');
+const a2 = document.querySelector('.a2');
+const a3 = document.querySelector('.a3');
+const a4 = document.querySelector('.a4');
+const adnav = document.querySelector('.additional-nav');
+
+
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
 let activepanel,activebody,currentactivebody,filteractive,imageactive, filteredimageactive,togglesignin=false,searchimageactive,togglesearchright=false, togglesearchoption, toggleclosesearch = false, penciltoggle=false,penciltoggle3=false,
-penciltoggle2, togglemaps = false;
+penciltoggle2, togglemaps = false, nxt=1, prev= 1, nextBody, prevBody,currentBody;
 
 function fixNav() {
     console.log(searchListing.offsetHeight,ExpandBox.offsetHeight)
@@ -121,7 +143,14 @@ function fixNav() {
         Dropdown3.style.display='none';
         Search.style.display='none';
         Body.style.display='flex';
-        selectFilesBody.style.display='none'
+        selectFilesBody.style.display='none';
+        fsSearch5.style.display= 'none';
+        fsSearch4.style.display= 'flex';
+        fsSearch8.style.display= 'none';
+        fsSearch3.classList.add('active');
+    fsSearch2.classList.remove('active');
+    adnav.style.display='none';
+        
         //currentactivebody.classList.add('activebody');
         //console.log(this.classList)
         if(this.classList[1]==='item5'){
@@ -285,6 +314,95 @@ function fixNav() {
             penciltoggle2.querySelector('.dropdown__content2').style.display='none';
 
         }
+    }
+
+    function changeFeatureNext(){
+        if(nxt > 0 && nxt < 6){nxt++;prev=nxt-1}
+
+        if(nxt===1){
+            nxtBtn.innerHTML = 'Next';
+            b1.style.display= 'flex';
+            b2.style.display= 'none';
+            a1.style.border='1px solid #64b3e8';
+            a2.style.border='none'
+        }
+        if(nxt===2){            
+            nxtBtn.innerHTML = 'Next';
+            b1.style.display= 'none';
+            b2.style.display= 'flex';
+            b3.style.display= 'none';
+            a2.style.border='1px solid #64b3e8';
+            a1.style.border='none'
+            a3.style.border='none'
+        }
+        else if(nxt===3){
+            nxtBtn.innerHTML = 'Next';
+            b2.style.display= 'none';
+            b3.style.display= 'flex';
+            b4.style.display= 'none';
+            a3.style.border='1px solid #64b3e8';
+            a2.style.border='none'
+            a4.style.border='none'
+        }
+        else if(nxt===4){
+            nxtBtn.innerHTML = 'Show me my Dream Home'
+            b3.style.display= 'none';
+            b4.style.display= 'flex';
+            a4.style.border='1px solid #64b3e8';
+            a3.style.border='none'
+        }
+        else if(nxt===5){
+            Body.style.display ='none'
+            Search.style.display="flex";
+            OpenSearch.style.display='none'
+            OpenSearchBox.style.display='flex'
+            dropdownContent.style.display='none'
+        }
+        console.log(prev,nxt)
+
+        
+        
+    }
+    function changeFeatureBack(){
+        if(prev===1){
+            b1.style.display= 'flex';
+            b2.style.display= 'none';
+            a1.style.border='1px solid #64b3e8';
+            a2.style.border='none'
+        }
+        else if(prev===2){
+            b1.style.display= 'none';
+            b2.style.display= 'flex';
+            b3.style.display= 'none';
+            a2.style.border='1px solid #64b3e8';
+            a1.style.border='none'
+            a3.style.border='none'
+        }
+        else if(prev===3){
+            nxtBtn.innerHTML = 'Next';
+            b2.style.display= 'none';
+            b3.style.display= 'flex';
+            b4.style.display= 'none';
+            a3.style.border='1px solid #64b3e8';
+            a2.style.border='none'
+            a4.style.border='none'
+        }
+        else if(prev===4){
+            nxtBtn.innerHTML = 'Next';
+            b3.style.display= 'none';
+            b4.style.display= 'flex';
+            a4.style.border='1px solid #64b3e8';
+            a3.style.border='none'
+        }
+        else if(prev===0){
+            fsSearch8.style.display= 'none';
+            fsSearch7.style.display ='flex';
+            adnav.style.display='none';
+
+        }
+        console.log(prev,nxt)
+        
+        if(prev > 0 && prev < 5){prev = prev-1;nxt=prev+1}
     }
 
 
@@ -483,3 +601,42 @@ addMaps.addEventListener('click' , () => {
 
 })
 
+fsSearch3.addEventListener('click', ()=> {
+    fsSearch3.classList.add('active');
+    fsSearch2.classList.remove('active');
+    fsSearch4.style.display= 'flex';
+    fsSearch5.style.display= 'none';
+    fsSearch7.style.display= 'none';
+    fsSearch8.style.display='none';
+});
+
+fsSearch2.addEventListener('click', ()=> {
+    fsSearch2.classList.add('active');
+    fsSearch3.classList.remove('active');
+    fsSearch4.style.display= 'none';
+    fsSearch5.style.display= 'none';
+    fsSearch7.style.display= 'flex';
+
+})
+
+fsSearch1.addEventListener('click', ()=> {
+    fsSearch4.style.display='none';
+    fsSearch5.style.display ='flex';
+})
+
+fsSearch6.addEventListener('click', ()=> {
+    Body.style.display ='none'
+    Search.style.display="flex";
+    OpenSearch.style.display='none'
+    OpenSearchBox.style.display='flex'
+    dropdownContent.style.display='none'
+});
+
+fsSearch9.addEventListener('click', ()=> {
+    fsSearch7.style.display='none';
+    adnav.style.display='flex';
+    fsSearch8.style.display='flex';
+})
+
+nxtBtn.addEventListener('click', changeFeatureNext)
+prevBtn.addEventListener('click', changeFeatureBack)
