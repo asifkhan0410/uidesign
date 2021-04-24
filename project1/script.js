@@ -608,6 +608,7 @@ fsSearch3.addEventListener('click', ()=> {
     fsSearch5.style.display= 'none';
     fsSearch7.style.display= 'none';
     fsSearch8.style.display='none';
+    adnav.style.display='none';
 });
 
 fsSearch2.addEventListener('click', ()=> {

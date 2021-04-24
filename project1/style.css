@@ -385,7 +385,10 @@ span.iconify{
     font-weight: 600;
     color: #64b3e8;
 }
-.fs-content-header>span{
+.fs-nav-filter{
+    display: flex;
+}
+.fs-nav-filter>span{
     border: 1px solid lightgrey;
     border-radius: 4px;
     background-color: #add8e65c;
@@ -1478,6 +1481,70 @@ align-items: center;}
     #myfiles>p, #facebook>p, #featuresearch>p{
         font-size: 10px;
     }
+
+    /* Feature seaction */
+    .fs-nav{
+        height: auto;
+        flex-wrap: wrap;
+    }
+    .fs-nav>h1 {
+        font-size: 10px;
+        margin: 10px 3px;
+    }
+    .fs-nav>button{
+        font-size: 10px;
+        margin: 0px 5px;
+        padding: 0 8px;
+    }
+    .fs-content-1>p{
+        font-size: 8px;
+    }
+    .fs-content-2>h4{
+        font-size: 12px;
+        padding: 30px;
+    }
+
+    .fs-content-2-btn {
+        height: 25px;
+        font-size: 10px;
+        padding: 0px 15px;
+    }
+    .additional-nav{
+        width: -webkit-fill-available;
+    margin-top: 3px;
+    border-bottom: 1px solid lightgrey;
+    height: 25px;
+    }
+    .additional-nav>button{
+        margin: 0px 10px;
+    border: none;
+    padding: 0px 20px;
+    }
+    .fs-content-header{
+        margin-top: 30px;
+        flex-direction: column;
+    }
+    .fs-content-header>h5 {margin: 0;}
+
+    .fs-card>img {
+        width: 130px;
+    }
+    .fs-card-info>p {
+        font-size: 12px;
+    }
+    .next-btn{
+        top: 72%;
+        left: 54%;
+    }
+    .previous-btn{
+        top: 72%;
+        left: 29%;
+    }
+    .openss2{
+        left: 30%;
+        padding: 0px;
+    }
+
     .featuresearch>input{
         width: 225px;
         font-size: 7px;
